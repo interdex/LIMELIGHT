@@ -28,4 +28,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
         lastScrollTop = st <= 0 ? 0 : st
     })
+
+    let headerLinks = document.querySelectorAll('.header_nav >ul >li > a')
+    headerLinks.forEach( (el, i) => {
+        el.addEventListener('mouseenter', () => {
+            headerLinks.forEach( (elem, index) => {
+                console.log(elem)
+                elem.parentNode.lastElementChild.classList.remove('active')
+            })
+            header.classList.add('active')
+            el.parentNode.lastElementChild.classList.add('active')
+        })
+        header.addEventListener('mouseleave', () => {
+            header.classList.remove('active')
+            el.parentNode.lastElementChild.classList.remove('active')
+        })
+    })
+
+    let burger = document.querySelector('.header_mobile')
+    burger.addEventListener('click', function() {
+        this.classList.toggle('active')
+    })
+
 })

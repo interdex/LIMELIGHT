@@ -33,6 +33,7 @@
     "eslint": "^7.8.1",
     "eslint-loader": "^4.0.2",
     "file-loader": "^6.1.0",
+    "fslightbox": "^3.2.3",
     "glightbox": "^3.0.7",
     "html-cli": "^1.0.0",
     "html-webpack-externals-plugin": "^3.8.0",
@@ -61,12 +62,15 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
+    "@fancyapps/fancybox": "^3.5.7",
+    "@popperjs/core": "^2.9.2",
     "babel-preset-es2015": "^6.24.1",
     "html-loader": "^1.0.0-alpha.0",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "slick-carousel": "^1.8.1",
-    "slick-slider": "^1.8.2"
+    "slick-slider": "^1.8.2",
+    "tooltip": "^1.6.1"
   }
 }

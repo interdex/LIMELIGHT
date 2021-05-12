@@ -36,11 +36,6 @@ html, body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden;
-
-  &.lock {
-    overflow: hidden;
-  }
 }
 
 ul[class],

@@ -5,12 +5,14 @@
 @import "mixin";
 
 /* А */
-
+@import 'components/accordion';
 /* В */
 @import 'components/btn';
 
 /* C */
 @import 'components/checkbox';
+@import 'pages/catalog';
+@import 'pages/card';
 
 /* D */
 /* E */
@@ -34,6 +36,8 @@
 /* N */
 /* O */
 /* P */
+@import 'photoswipe.css';
+@import 'default-skin/default-skin.css'
 
 /* Q */
 

@@ -1,0 +1,169 @@
+.card
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    padding: 110px 0 0 0
+    margin-bottom: 208px
+    &_left
+        width: calc(100vw - 780px)
+    &_right
+        width: 290px // calc(100% - 1140px)
+        // padding-left: 160px
+        // padding-right: 80px
+        // margin-right: 100px
+        position: sticky
+        right: 300px
+        top: 105px
+        height: calc(100vh - 160px)
+        overflow-y: auto
+        &::-webkit-scrollbar 
+            width: 5px
+        &::-webkit-scrollbar-track 
+            box-shadow: inset 0 0 6px transparent //#F1F1F1
+        &::-webkit-scrollbar-thumb 
+            background-color: transparent //#A8A8A8
+            outline: 1px solid transparent //slategrey
+    &_name
+        margin-bottom: 45px
+        text-transform: uppercase
+        font-size: 18px
+        letter-spacing: 0.1em
+    &_price
+        font-size: 16px
+        margin-bottom: 48px
+    &_color
+        margin-bottom: 21px
+        &-title
+            font-size: 14px
+            margin-bottom: 12px
+    &_colors
+        display: flex
+        align-items: center
+        &-item
+            width: 35px
+            height: 35px
+            border-radius: 50%
+            margin-left: 15px
+            cursor: pointer
+            position: relative
+            &:last-of-type(1)
+                margin-right: 0                
+            input
+                position: absolute
+                visibility: hidden
+                user-select: none
+                position: relative
+                &:checked + span
+                    display: inline-block
+                    @include position-center
+                    width: 35px
+                    height: 35px
+                    border-radius: 50%
+                    border: 1px solid #353535
+                    z-index: 3
+    &_size
+        margin-bottom: 44px
+        &-title
+            font-size: 14px
+            margin-bottom: 10px
+        &-items
+            display: flex
+        &-item
+            width: 27px
+            height: 27px
+            margin-left: 15px
+            margin-right: 5px
+            cursor: pointer
+            &:nth-last-of-type(1)
+                margin-right: 0
+        input
+            position: absolute
+            visibility: hidden
+            user-select: none
+            &:disabled + .card_size-text
+                font-weight: 400
+                &:before, &:after
+                    opacity: 1  
+                    visibility: visible
+                    user-select: auto
+            &:checked + .card_size-text
+                font-weight: 700
+        &-text
+            font-size: 14px
+            position: relative
+            text-transform: uppercase
+            @include center
+            width: 27px
+            height: 27px
+            &:before, &:after
+                content: ""
+                @include position-center
+                width: 1px
+                height: 37px
+                background: #353535
+                opacity: 0
+                visibility: hidden  
+                user-select: none
+            &:before
+                transform: translate(-50%, -50%) rotate(-45deg)
+            &:after
+                transform: translate(-50%, -50%) rotate(45deg)
+    &_btn
+        display: flex
+        margin-bottom: 50px
+        .btn
+            &:nth-child(1)
+                width: 221px
+                margin-right: 1px
+                font-size: 13px
+                text-transform: uppercase
+                letter-spacing: 0.1em
+    &_descr
+        padding-left: 15px
+        >p
+            font-size: 12px
+            line-height: 15px
+            margin-bottom: 51px
+
+.also
+    margin-bottom: 125px
+    &_heading
+        text-transform: uppercase
+        font-size: 20px
+        line-height: 1.2em
+        margin-bottom: 42px
+    &_items
+        display: flex
+        justify-content: space-between
+        padding: 0 190px
+    &_item
+        width: 350px
+
+@media (max-width: 1024px)
+    .card
+        &_left
+            width: calc(100vw - 505px)
+        &_right
+            right: 25px
+    .also
+        &_items
+            padding: 0
+    
+@media (max-width: 768px)
+    .card
+        flex-direction: column
+        padding-top: 42px
+        padding-bottom: 0
+        margin-bottom: 100px
+        &_left
+            width: 100%
+            margin-bottom: 30px
+        &_right
+            width: 100%
+            height: auto
+        &_color, &_size, &_btn
+            display: none
+        &_descr
+            padding-left: 0
+    .also
+        display: none

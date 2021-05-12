@@ -1,0 +1,125 @@
+////////////////////
+// Colour Vars
+////////////////////
+$light: #fff;
+$primary: #fff;
+$light-shade-3: #bababa;
+$dark:#444444;
+
+////////////////////
+// Accordion
+////////////////////
+.accordion {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+////////////////////
+// Accordion -- Hide Radios Inputs
+////////////////////
+.accordion input[type="radio"] {
+	display: none;
+}
+
+////////////////////
+// Accordion -- Section Titles (labels)
+////////////////////
+.accordion label, .accordion a {
+	padding: 13px 0;
+	cursor: pointer;
+	display: inline-flex;
+	font-size: 13px;
+	line-height: 1.2em;
+	text-transform: uppercase;
+	border-bottom: 1px solid #DFDFDF;
+
+	&:nth-of-type(1) {
+		border-top: 1px solid #DFDFDF;
+	}
+}
+
+.accordion label {
+	user-select: none;
+	background-color: $primary;
+}
+
+.accordion label:hover {
+	background: $primary;
+}
+
+.accordion input:checked+label {
+	background: $primary;
+	border-bottom: 1px solid $light;
+
+	&:last-of-type {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+
+////////////////////
+// Accordion -- Content
+////////////////////
+.accordion-content {
+	background-color: $light;
+	overflow: hidden;
+	padding: 0 13px;
+	p {
+		margin-bottom: 5px;
+		font-size: 12px;
+		line-height: 1.2em;
+		&:nth-last-of-type(1){
+			margin-bottom: 0;
+		}
+	}
+	ol {
+		list-style-type: none;
+		margin: 0;
+		padding-left: 44px;
+		li {
+			position: relative;
+			margin-bottom: 25px;
+			font-size: 12px;
+			&:nth-last-of-type(1) {
+				margin-bottom: 0;
+			}
+			&:before {
+				content: '';
+				width: 4px;
+				height: 4px;
+				background: #000;
+				border-radius: 50%;
+				position: absolute;
+				top: 6px;
+				left: -12px;
+			}
+		}
+	}
+
+}
+
+////////////////////
+// Accordion -- Show/Hide Content
+////////////////////
+.accordion-content {
+	max-height: 0;
+	visibility: hidden;
+	transition: all 0.8s;
+	* {
+		opacity: 0;
+		transition: opacity 0.8s;
+	}
+
+}
+
+.accordion input[type="radio"]:checked+label+.accordion-content {
+	max-height: 100vh;
+	visibility: visible;
+	opacity: 1;
+	padding: 25px 13px 31px 13px;
+
+	* {
+		opacity: 1;
+	}
+}

@@ -19,44 +19,106 @@
   <link href="main.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="main-page">
   <img class="maket" src="/main.jpg" alt="">
-  <div class="container">
-    <header class="header">
-      <div class="header_left">
-        <nav>
-          <ul>
-            <li>
-              <a href="#">Купить</a>
-            </li>
-            <li>
-              <a href="#">Узнать больше</a>
-            </li>
-          </ul>
-        </nav>
+
+  <header class="header">
+    <div class="header_left">
+      <div class="header_mobile">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <div class="header_center">
-        <a href="#" class="logo">LIMELIGHT</a>
+      <button class="header_search">
+        <img src="../img/icon_search.png" alt="">
+      </button>
+      <nav class="header_nav">
+        <ul>
+          <li>
+            <a href="#">Купить</a>
+            <nav class="header_subnav">
+              <a href="#" class="header_subnav-title">Купить</a>
+              <ul>
+                <li>
+                  <a href="#">ВСЯ ОДЕЖДА</a>
+                </li>
+                <li>
+                  <a href="#">ПЛАТЬЯ</a>
+                </li>
+                <li>
+                  <a href="#">КОМПЛЕКТЫ</a>
+                </li>
+                <li>
+                  <a href="#">СВИТЕРЫ</a>
+                </li>
+                <li>
+                  <a href="#">ЮБКИ И БРЮКИ</a>
+                </li>
+                <li>
+                  <a href="#">ЖАКЕТЫ</a>
+                </li>
+                <li>
+                  <a href="#">ТОПЫ И БОДИ</a>
+                </li>
+              </ul>
+            </nav>
+          </li>
+          <li>
+            <a href="#">Узнать больше</a>
+            <nav class="header_subnav">
+              <div class="header_subnav-items">
+                <a href="#" class="header_subnav-item">
+                  <img src="../img/subnav-1.jpg" alt="">
+                  ВОПРОСЫ И ОТВЕТЫ
+                </a>
+                <a href="#" class="header_subnav-item">
+                  <img src="../img/subnav-2.jpg" alt="">
+                  О НАС
+                </a>
+                <a href="#" class="header_subnav-item">
+                  <img src="../img/subnav-3.jpg" alt="">
+                  ДОСТАВКА И ВОЗВРАТ
+                </a>
+              </div>
+              <div class="header_subnav-contacts footer_right">
+                <div class="footer_heading">СВЯЗАТЬСЯ С НАМИ</div>
+                <label>Телефон <a href="tel:+79154707711">+7 (915) 470-77-11</a> </label>
+                <div class="footer_title">Напишите нам</div>
+                <label> <a href="https://api.whatsapp.com/send/?phone=+79154707711">WhatsApp +7 (915) 470-77-11</a>
+                </label>
+                <label> <a href="https://www.instagram.com/instagram/lime11ght">Direct Instagram @lime11ght</a> </label>
+              </div>
+            </nav>
+          </li>
+        </ul>
+      </nav>
+      <div class="header_nav-mobile">
+
       </div>
-      <div class="header_right">
-        <button class="header_lang">
-          EN
-        </button>
-        <button class="header_fav">
-          <img src="../img/icon_wishlist.png" alt="">
-        </button>
-        <button class="header_search">
-          <img src="../img/icon_search.png" alt="">
-        </button>
-        <button class="header_user">
-          <img src="../img/icon_personal.svg" alt="">
-        </button>
-        <button class="header_basket">
-          <img src="../img/icon_basket.png" alt="">
-        </button>
-      </div>
-    </header>
-  </div>
+    </div>
+    <div class="header_center">
+      <a href="#" class="logo">LIMELIGHT</a>
+    </div>
+    <div class="header_right">
+      <button class="header_lang">
+        EN
+      </button>
+      <button class="header_fav">
+        <img src="../img/icon_wishlist.png" alt="">
+      </button>
+      <button class="header_search">
+        <img src="../img/icon_search.png" alt="">
+      </button>
+      <button class="header_user">
+        <img src="../img/icon_personal.svg" alt="">
+      </button>
+      <button class="header_basket">
+        <img src="../img/icon_basket.png" alt="">
+      </button>
+    </div>
+  </header>
+
 
   <div class="main main_section">
     <div class="main_bg">
@@ -112,15 +174,6 @@
       <div class="inst_slider-item">
         <img src="../img/inst-4.jpg" alt="">
       </div>
-      <div class="inst_slider-item">
-        <img src="../img/inst-1.jpg" alt="">
-      </div>
-      <div class="inst_slider-item">
-        <img src="../img/inst-2.jpg" alt="">
-      </div>
-      <div class="inst_slider-item">
-        <img src="../img/inst-3.jpg" alt="">
-      </div>
     </div>
     <div class="inst_bottom">
       <div class="inst_text">
@@ -138,7 +191,7 @@
       Узнать первой о новинках и специальных предложениях
     </div>
     <div class="subscribe_input-wrap">
-      <input type="text" class="subscribe_input" placeholder="Введите email">
+      <input type="text" class="subscribe_input" placeholder="Введите email" maxlength="40">
       <button class="btn btn-primary">
         ПОДПИСАТЬСЯ
       </button>
@@ -149,7 +202,8 @@
         <img src="../img/checkbox-icon.svg" alt="">
       </span>
       <div class="checkbox_text">
-        Подписываясь на рассылку, вы даете согласие на обработку ваших персональных данных и соглашаетесь с условиями публичной оферты
+        Подписываясь на рассылку, вы даете согласие на обработку ваших <br>
+        персональных данных и соглашаетесь с условиями публичной оферты
       </div>
     </label>
   </section>
@@ -164,16 +218,16 @@
                 <a href="#">УЗНАТЬ БОЛЬШЕ</a>
               </li>
               <li>
-                <a href="#">УЗНАТЬ БОЛЬШЕ</a>
+                <a href="#">ВОПРОСЫ И ОТВЕТЫ</a>
               </li>
               <li>
-                <a href="#">УЗНАТЬ БОЛЬШЕ</a>
+                <a href="#">ДОСТАВКА И ВОЗВРАТ</a>
               </li>
               <li>
-                <a href="#">УЗНАТЬ БОЛЬШЕ</a>
+                <a href="#">О НАС</a>
               </li>
               <li>
-                <a href="#">УЗНАТЬ БОЛЬШЕ</a>
+                <a href="#">ПУБЛИЧНАЯ ОФЕРТА</a>
               </li>
             </ul>
           </nav>
@@ -183,25 +237,25 @@
                 <a href="#">КУПИТЬ</a>
               </li>
               <li>
-                <a href="#">КУПИТЬ</a>
+                <a href="#">ВСЯ ОДЕЖДА</a>
               </li>
               <li>
-                <a href="#">КУПИТЬ</a>
+                <a href="#">ПЛАТЬЯ</a>
               </li>
               <li>
-                <a href="#">КУПИТЬ</a>
+                <a href="#">КОМПЛЕКТЫ</a>
               </li>
               <li>
-                <a href="#">КУПИТЬ</a>
+                <a href="#">СВИТЕРЫ</a>
               </li>
               <li>
-                <a href="#">КУПИТЬ</a>
+                <a href="#">ЮБКИ И БРЮКИ</a>
               </li>
               <li>
-                <a href="#">КУПИТЬ</a>
+                <a href="#">ЖАКЕТЫ</a>
               </li>
               <li>
-                <a href="#">КУПИТЬ</a>
+                <a href="#">ТОПЫ И БОДИ</a>
               </li>
             </ul>
           </nav>

@@ -1,0 +1,74 @@
+.catalog
+    padding: 122px 0 151px 0
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-start
+    justify-content: space-between
+    &_item
+        width: calc(50% - 15px)
+        margin-right: 30px
+        margin-bottom: 65px
+        &:nth-child(2n)
+            margin-right: 0
+        &:nth-last-child(1), &:nth-last-child(2)
+            margin-bottom: 0
+        a
+            @include center
+            flex-direction: column
+            margin-bottom: 6px
+        &-img
+            width: 100%
+            height: auto
+            margin-bottom: 16px
+            position: relative
+            img
+                width: 100%
+                height: auto
+            picture
+                img
+                    position: absolute
+                    top: 0
+                    right: 0
+                    left: 0
+                    bottom: 0
+                    z-index: 2
+                    visibility: hidden
+                    opacity: 0
+                    transition: 0.35s
+                    transition-timing-function: ease-in-out
+                &:nth-of-type(1)
+                    img
+                        position: unset
+                        z-index: 1
+                        visibility: visible
+                        opacity: 1
+        &-name
+            text-transform: uppercase
+            font-size: 16px
+            font-weight: normal
+            letter-spacing: 0.1em
+        &-price
+            color: #888
+            font-size: 12px
+            font-weight: normal
+        &-colors
+            @include center
+        &-color
+            width: 15px
+            height: 15px
+            border-radius: 50%
+            margin-right: 10px
+            &:nth-last-child(1)
+                margin-right: 0
+
+@media (max-width: 768px)
+    .catalog
+        padding: 42px 0 75px
+    
+@media (max-width: 575px)
+    .catalog
+        flex-direction: column
+        &_item
+            width: 100%
+            margin-right: 0
+            margin-bottom: 60px
