@@ -8,17 +8,24 @@
         visibility: hidden
         opacity: 0
         user-select: none
-        &:checked + span
-            img
-                opacity: 1
+        &:checked 
+            & + span
+                img
+                    opacity: 1
+            & + .checkbox_icon
+                background: #000
+                border-color: #000
     &_icon
-        background: #000
+        background: #fff
+        border: 1px solid #909090
         width: 15px
         height: 15px
         position: relative
         @include center
         margin-right: 10px
+        transition: 0.3s ease-in-out
         img
+            transition: 0.3s ease-in-out
             width: 10px
             height: auto
             z-index: 2
