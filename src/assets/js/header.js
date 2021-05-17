@@ -30,18 +30,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
     })
 
     let headerLinks = document.querySelectorAll('.header_nav >ul >li > a')
+
+    function headerHoverActive() {
+        header.classList.add('active')
+        header.classList.remove('fixed')
+    }
+    function headerHoverDisabled() {
+        header.classList.remove('active')
+        header.classList.remove('fixed')
+    }
     headerLinks.forEach( (el, i) => {
         el.addEventListener('mouseenter', () => {
             headerLinks.forEach( (elem, index) => {
-                console.log(elem)
                 elem.parentNode.lastElementChild.classList.remove('active')
             })
-            header.classList.add('active')
+            headerHoverActive()
             el.parentNode.lastElementChild.classList.add('active')
         })
         header.addEventListener('mouseleave', () => {
-            header.classList.remove('active')
+            headerHoverDisabled()
             el.parentNode.lastElementChild.classList.remove('active')
+            headerBasketPopup.classList.remove('active')
         })
     })
 
@@ -49,5 +58,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
     burger.addEventListener('click', function() {
         this.classList.toggle('active')
     })
+    
+    //HEADER BASKET
+    let headerBasket = document.querySelectorAll('.header_basket')
+    let headerBasketPopup = document.querySelector('.basket_popup')
+    headerBasket.forEach(function(el) {
+        el.addEventListener('mouseover', function() {
+            headerHoverActive()
+            headerBasketPopup.classList.add('active')
+        })
+    })
 
+    //HEADER SEARCH
+    let headerSearchBtn = document.querySelectorAll('.header_search')
+    let searchPopupInput = document.querySelector('.search_popup input')
+    let searchPopup = document.querySelector('.search_popup')
+    let searchPopupClose = document.querySelector('.search_popup-close')
+
+    headerSearchBtn.forEach(function(el) {
+        el.addEventListener('click', function() {
+            searchPopup.classList.add('active')
+            setTimeout(() => {
+                searchPopupInput.focus()
+            }, 100);
+        })
+    })
+    searchPopupClose.addEventListener('click', function() {
+        searchPopup.classList.remove('active')
+    })
+    
 })

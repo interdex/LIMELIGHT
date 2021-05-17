@@ -20,7 +20,6 @@
 </head>
 
 <body>
-  <img class="maket" src="/card.jpg" alt="">
 
   <header class="header">
     <div class="header_left">
@@ -85,11 +84,16 @@
                 <div class="footer_heading">СВЯЗАТЬСЯ С НАМИ</div>
                 <label>Телефон <a href="tel:+79154707711">+7 (915) 470-77-11</a> </label>
                 <div class="footer_title">Напишите нам</div>
-                <label> <a href="https://api.whatsapp.com/send/?phone=+79154707711">WhatsApp +7 (915)
+                <label>
+                  <img src="../img/top-menu-wa.png" alt="">
+                  <a href="https://api.whatsapp.com/send/?phone=+79154707711">WhatsApp +7 (915)
                     470-77-11</a>
                 </label>
-                <label> <a href="https://www.instagram.com/instagram/lime11ght">Direct Instagram
-                    @lime11ght</a> </label>
+                <label>
+                  <img src="../img/top-menu-inst.png" alt="">
+                  <a href="https://www.instagram.com/instagram/lime11ght">Direct Instagram
+                    @lime11ght</a>
+                </label>
               </div>
             </nav>
           </li>
@@ -121,85 +125,28 @@
     </div>
   </header>
 
-  <div class="container">
-
-    <div class="login">
-      <div class="login_heading">СОЗДАТЬ АККАУНТ</div>
-      <form class="login_form form">
-        <div class="input_wrap">
-          <div class="input_title-wrap">
-            <div class="input_title">ИМЯ</div>
-          </div>
-          <div class="input">
-            <input type="text" name="name" maxlength="50">
-          </div>
-        </div>
-        <div class="input_wrap">
-          <div class="input_title-wrap">
-            <div class="input_title">ФАМИЛИЯ</div>
-          </div>
-          <div class="input">
-            <input type="text" name="lastname" maxlength="50">
-          </div>
-        </div>
-        <div class="input_wrap">
-          <div class="input_title-wrap">
-            <div class="input_title">EMAIL</div>
-          </div>
-          <div class="input">
-            <input type="text" name="email" maxlength="50">
-          </div>
-        </div>
-        <div class="input_wrap">
-          <div class="input_title-wrap">
-            <div class="input_title">ПАРОЛЬ</div>
-            <div class="input_subtitle">Забыли пароль?</div>
-          </div>
-          <div class="input">
-            <input type="text" name="pass" maxlength="50">
-          </div>
-        </div>
-        <label class="checkbox">
-          <input class="checkbox_input" type="checkbox">
-          <span class="checkbox_icon">
-            <img src="../img/checkbox-icon.svg" alt="">
-          </span>
-          <div class="checkbox_text">
-            Держите меня в курсе новостей и эксклюзивных предложений
-          </div>
-        </label>
-        <div class="btn-wrap">
-          <button class="btn btn-primary" type="submit">ЗАРЕГИСТРИРОВАТЬСЯ</button>
-          <div class="input_subtitle">
-            Уже есть аккаунт?
-            <a href="#">Авторизоваться</a>
-          </div>
-        </div>
-      </form>
-    </div>
-
-  </div>
-
   <section class="subscribe">
-    <div class="subscribe_heading">
-      Узнать первой о новинках и специальных предложениях
-    </div>
-    <div class="subscribe_input-wrap">
-      <input type="text" class="subscribe_input" placeholder="Введите email" maxlength="40">
-      <button class="btn btn-primary">
-        ПОДПИСАТЬСЯ
-      </button>
-    </div>
-    <label class="checkbox">
-      <input class="checkbox_input" type="checkbox">
-      <span class="checkbox_icon">
-        <img src="../img/checkbox-icon.svg" alt="">
-      </span>
-      <div class="checkbox_text">
-        Подписываясь на рассылку, вы даете согласие на обработку ваших <br>
-        персональных данных и соглашаетесь с условиями публичной оферты
+    <form class="subscribe_form">
+      <div class="subscribe_heading">
+        Узнать первой о новинках и специальных предложениях
       </div>
-    </label>
+      <div class="subscribe_input-wrap">
+        <input type="text" class="subscribe_input" placeholder="Введите email" maxlength="40">
+        <button class="btn btn-primary">
+          ПОДПИСАТЬСЯ
+        </button>
+      </div>
+      <label class="checkbox">
+        <input class="checkbox_input" type="checkbox">
+        <span class="checkbox_icon">
+          <img src="../img/checkbox-icon.svg" alt="">
+        </span>
+        <div class="checkbox_text">
+          Подписываясь на рассылку, вы даете согласие на обработку ваших <br>
+          персональных данных и соглашаетесь с условиями публичной оферты
+        </div>
+      </label>
+    </form>
   </section>
 
   <footer class="footer">
@@ -280,78 +227,74 @@
     </div>
   </footer>
 
-  <div class="footer-mobile">
-    <div class="container">
-      <div class="accordion">
-        <input type="radio" name="accordion" id="accordion-5">
-        <label for="accordion-5">КУПИТЬ</label>
-        <div class="accordion-content">
-          <ul>
-            <li>
-              <a href="#">ВСЯ ОДЕЖДА</a>
-            </li>
-            <li>
-              <a href="#">ПЛАТЬЯ</a>
-            </li>
-            <li>
-              <a href="#">КОМПЛЕКТЫ</a>
-            </li>
-            <li>
-              <a href="#">СВИТЕРЫ</a>
-            </li>
-            <li>
-              <a href="#">ЮБКИ И БРЮКИ</a>
-            </li>
-            <li>
-              <a href="#">ЖАКЕТЫ</a>
-            </li>
-            <li>
-              <a href="#">ТОПЫ И БОДИ</a>
-            </li>
-          </ul>
-        </div>
 
-        <input type="radio" name="accordion" id="accordion-6">
-        <label for="accordion-6">УЗНАТЬ БОЛЬШЕ</label>
-        <div class="accordion-content">
-          <ol>
-            <li>Размер XS какое-то описание размера и кроя</li>
-            <li>Размер S какое-то описание размера и кроя</li>
-            <li>Размер M какое-то описание размера и кроя</li>
-            <li>Размер L какое-то описание размера и кроя</li>
-          </ol>
-        </div>
+  <div class="search_popup">
 
-        <input type="radio" name="accordion" id="accordion-7">
-        <a href="#" class="no-sub" for="accordion-7">ПУБЛИЧНАЯ ОФЕРТА</a>
-
-        <input type="radio" name="accordion" id="accordion-8">
-        <label for="accordion-8">СВЯЗАТЬСЯ С НАМИ</label>
-        <div class="accordion-content">
-          <label>Телефон <a href="tel:+79154707711">+7 (915) 470-77-11</a> </label>
-          <div class="footer_title">Напишите нам</div>
-          <label> <a href="https://api.whatsapp.com/send/?phone=+79154707711">WhatsApp +7 (915)
-              470-77-11</a>
-          </label>
-          <label> <a href="https://www.instagram.com/instagram/lime11ght">Direct Instagram
-              @lime11ght</a> </label>
-        </div>
-
+    <div class="search_popup-input">
+      <div class="search_popup-icon">
+        <img src="../img/search.png" alt="">
       </div>
-      <div class="footer-mobile_soc">
-        <a href="https://api.whatsapp.com/send/?phone=+79154707711">
-          <img src="../img/footer-m-wa.png" alt="">
-        </a>
-        <a href="https://www.instagram.com/instagram/lime11ght">
-          <img src="../img/footer-m-inst.png" alt="">
-        </a>
+      <input type="text" placeholder="Поиск">
+      <div class="search_popup-close">
+        <img src="../img/search-close.svg" alt="">
       </div>
+    </div>
+  </div>
+
+  <div class="header_popups">
+    <div class="basket_popup">
+      <div class="basket_popup-items">
+        <div class="basket_popup-item">
+          <div class="basket_popup-item-img">
+            <img src="../img/header-basket-1.jpg" alt="">
+          </div>
+          <div class="basket_popup-right">
+            <div class="basket_popup-descr">
+              <div class="basket_popup-price">11 500 ₽</div>
+              <div class="basket_popup-name">ПЛАТЬЕ MINA BELTED SHIRT</div>
+              <div class="basket_popup-info">Черный / S</div>
+            </div>
+            <div class="basket_popup-count">
+              <div class="basket_item-count">
+                <span></span>
+                <input type="text" placeholder="1" min="1" readonly="readonly">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="basket_popup-item">
+          <div class="basket_popup-item-img">
+            <img src="../img/header-basket-2.jpg" alt="">
+          </div>
+          <div class="basket_popup-right">
+            <div class="basket_popup-descr">
+              <div class="basket_popup-price">7 000 ₽</div>
+              <div class="basket_popup-name">ПЛАТЬЕ
+                SPORTY STYLE</div>
+              <div class="basket_popup-info">Черный / XS</div>
+            </div>
+            <div class="basket_popup-count">
+              <div class="basket_item-count">
+                <span></span>
+                <input type="text" placeholder="1" min="1" readonly="readonly">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="basket_popup-total">
+        <div class="basket_popup-total-title">Итого</div>
+        <div class="basket_popup-total-price">25 500 ₽</div>
+      </div>
+      <button class="btn btn-primary">ПЕРЕЙТИ В КОРЗИНУ</button>
     </div>
   </div>
 
   <script src="vendors~basket~card~catalog~index~lk~lk_login~lk_signin~order~search.js"></script>
   <script src="basket~catalog~lk~lk_login~lk_signin~order~search.js"></script>
-  <script src="lk_signin.js"></script>
+  <script src="search.js"></script>
 </body>
 
 </html>

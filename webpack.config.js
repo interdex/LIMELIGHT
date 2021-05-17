@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const { CleanWebpackPlugin } = require('clean-webpack-plugcssin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -92,12 +93,81 @@ const babelOptions = preset => {
 const plugins = () => {
     const base = [
         new HtmlWebpackPlugin({
-            template: './index.html',
+            filename:'index.html',
+            template: 'index.html',
+            chunks: ['index'],
             minify: {
                 collapseWithSpace: isProd
             }
         }),
 
+        new HtmlWebpackPlugin({
+            filename:'catalog.html',
+            template: 'catalog.html',
+            chunks: ['catalog'],
+            minify: {
+                collapseWithSpace: isProd
+            }
+        }),
+
+        new HtmlWebpackPlugin({
+            filename:'card.html',
+            template: 'card.html',
+            chunks: ['card'],
+            minify: {
+                collapseWithSpace: isProd
+            }
+        }),
+
+        new HtmlWebpackPlugin({
+            filename:'order.html',
+            template: 'order.html',
+            chunks: ['order'],
+            minify: {
+                collapseWithSpace: isProd
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename:'basket.html',
+            template: 'basket.html',
+            chunks: ['basket'],
+            minify: {
+                collapseWithSpace: isProd
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename:'lk_login.html',
+            template: 'lk_login.html',
+            chunks: ['lk_login'],
+            minify: {
+                collapseWithSpace: isProd
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename:'lk_signin.html',
+            template: 'lk_signin.html',
+            chunks: ['lk_signin'],
+            minify: {
+                collapseWithSpace: isProd
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename:'lk.html',
+            template: 'lk.html',
+            chunks: ['lk'],
+            minify: {
+                collapseWithSpace: isProd
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename:'search.html',
+            template: 'search.html',
+            chunks: ['search'],
+            minify: {
+                collapseWithSpace: isProd
+            }
+        }),
+       
         //new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
             patterns: [
@@ -108,7 +178,7 @@ const plugins = () => {
         new MiniCssExtractPlugin({
             filename: fileName('css'),
         })
-    ].concat(htmlPlugins)
+    ]
 
     /*if(isProd){
         base.push(new BundleAnalyzerPlugin)
@@ -120,11 +190,19 @@ const plugins = () => {
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
-    entry: {
-        main: ['@babel/polyfill', './index.js'],
+    entry: { 
+        'index': ['@babel/polyfill', './index.js', './assets/js/pages/index.js'],
+        'catalog': ['@babel/polyfill', './index.js', './assets/js/pages/catalog.js'],
+        'card': ['@babel/polyfill', './index.js', './assets/js/pages/card.js'],
+        'order': ['@babel/polyfill', './index.js', './assets/js/pages/order.js'],
+        'basket': ['@babel/polyfill', './index.js', './assets/js/pages/basket.js'],
+        'lk_login': ['@babel/polyfill', './index.js', './assets/js/pages/login.js'],
+        'lk_signin': ['@babel/polyfill', './index.js', './assets/js/pages/signin.js'],
+        'lk': ['@babel/polyfill', './index.js', './assets/js/pages/lk.js'],
+        'search': ['@babel/polyfill', './index.js', './assets/js/pages/search.js'],
     },
     output: {
-        filename: fileName('js'),
+        filename:  fileName('js'),
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
