@@ -20,7 +20,6 @@
 </head>
 
 <body>
-    <img class="maket" src="/card.jpg" alt="">
 
     <header class="header">
         <div class="header_left">
@@ -118,6 +117,56 @@
             <button class="header_basket">
                 <img src="../img/icon_basket.png" alt="">
             </button>
+        </div>
+        <div class="header_popups">
+            <div class="basket_popup">
+                <div class="basket_popup-items">
+                    <div class="basket_popup-item">
+                        <div class="basket_popup-item-img">
+                            <img src="../img/header-basket-1.jpg" alt="">
+                        </div>
+                        <div class="basket_popup-right">
+                            <div class="basket_popup-descr">
+                                <div class="basket_popup-price">11 500 ₽</div>
+                                <div class="basket_popup-name">ПЛАТЬЕ MINA BELTED SHIRT</div>
+                                <div class="basket_popup-info">Черный / S</div>
+                            </div>
+                            <div class="basket_popup-count">
+                                <div class="basket_item-count">
+                                    <span></span>
+                                    <input type="text" placeholder="1" min="1" readonly>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket_popup-item">
+                        <div class="basket_popup-item-img">
+                            <img src="../img/header-basket-2.jpg" alt="">
+                        </div>
+                        <div class="basket_popup-right">
+                            <div class="basket_popup-descr">
+                                <div class="basket_popup-price">7 000 ₽</div>
+                                <div class="basket_popup-name">ПЛАТЬЕ
+                                    SPORTY STYLE</div>
+                                <div class="basket_popup-info">Черный / XS</div>
+                            </div>
+                            <div class="basket_popup-count">
+                                <div class="basket_item-count">
+                                    <span></span>
+                                    <input type="text" placeholder="1" min="1" readonly>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="basket_popup-total">
+                    <div class="basket_popup-total-title">Итого</div>
+                    <div class="basket_popup-total-price">25 500 ₽</div>
+                </div>
+                <button class="btn btn-primary">ПЕРЕЙТИ В КОРЗИНУ</button>
+            </div>
         </div>
     </header>
 
@@ -279,30 +328,41 @@
 
             </div>
         </section>
+
+        <div class="addtobasket">
+            <div class="addtobasket_color"></div>
+            <div class="addtobasket_size"></div>
+            <div class="addtobasket-btns">
+                <button class="btn btn-primary">ДОБАВИТЬ В КОРЗИНУ</button>
+                <button class="btn btn-iconed">
+                    <img src="../img/fav-icon.png" alt="favorit">
+                </button>
+            </div>
+        </div>
     </div>
 
-
-
     <section class="subscribe">
-        <div class="subscribe_heading">
-            Узнать первой о новинках и специальных предложениях
-        </div>
-        <div class="subscribe_input-wrap">
-            <input type="text" class="subscribe_input" placeholder="Введите email" maxlength="40">
-            <button class="btn btn-primary">
-                ПОДПИСАТЬСЯ
-            </button>
-        </div>
-        <label class="checkbox">
-            <input class="checkbox_input" type="checkbox">
-            <span class="checkbox_icon">
-                <img src="../img/checkbox-icon.svg" alt="">
-            </span>
-            <div class="checkbox_text">
-                Подписываясь на рассылку, вы даете согласие на обработку ваших <br />
-                персональных данных и соглашаетесь с условиями публичной оферты
+        <form class="subscribe_form">
+            <div class="subscribe_heading">
+                Узнать первой о новинках и специальных предложениях
             </div>
-        </label>
+            <div class="subscribe_input-wrap">
+                <input type="text" class="subscribe_input" placeholder="Введите email" maxlength="40">
+                <button class="btn btn-primary">
+                    ПОДПИСАТЬСЯ
+                </button>
+            </div>
+            <label class="checkbox">
+                <input class="checkbox_input" type="checkbox">
+                <span class="checkbox_icon">
+                    <img src="../img/checkbox-icon.svg" alt="">
+                </span>
+                <div class="checkbox_text">
+                    Подписываясь на рассылку, вы даете согласие на обработку ваших <br />
+                    персональных данных и соглашаетесь с условиями публичной оферты
+                </div>
+            </label>
+        </form>
     </section>
 
     <footer class="footer">
@@ -427,7 +487,7 @@
 
                 <input type="radio" name="accordion" id="accordion-7">
                 <a href="#" class="no-sub" for="accordion-7">ПУБЛИЧНАЯ ОФЕРТА</a>
-                
+
                 <input type="radio" name="accordion" id="accordion-8">
                 <label for="accordion-8">СВЯЗАТЬСЯ С НАМИ</label>
                 <div class="accordion-content">
@@ -448,6 +508,18 @@
                 <a href="https://www.instagram.com/instagram/lime11ght">
                     <img src="../img/footer-m-inst.png" alt="">
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="search_popup">
+        <div class="search_popup-input">
+            <div class="search_popup-icon">
+                <img src="../img/search.png" alt="">
+            </div>
+            <input type="text" placeholder="Поиск">
+            <div class="search_popup-close">
+                <img src="../img/search-close.svg" alt="">
             </div>
         </div>
     </div>

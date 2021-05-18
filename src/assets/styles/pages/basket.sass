@@ -1,3 +1,4 @@
+@import '../mixin.scss'
 .basket
     display: flex
     justify-content: space-between
@@ -6,7 +7,7 @@
     margin-bottom: 235px
     &_left
         width: 38.75%
-    &_title
+    &_heading
         font-size: 25px
         text-transform: uppercase
         line-height: 1.2em
@@ -145,4 +146,38 @@
         letter-spacing: 0.1em
         height: 44px
         @include center
+
+@media (max-width: 1024px)
+    .basket
+        flex-direction: column
+        &_left
+            width: 100%
+        &_right
+            width: 100%
+            border: none
+            padding-left: 0
+            border-top: 1px solid #DFDFDF
+            padding-top: 20px
+        &_heading
+            margin-bottom: 20px
+            font-size: 18px
+
+@media (max-width: 568px)
+    .basket
+        padding-top: 75px
+        margin-bottom: 50px
+        &_item
+            flex-direction: column
+            &-img
+                width: 100%
+                margin-right: 0
+                margin-bottom: 15px
+                img
+                    width: 100%
+                    height: auto
+            &-descr
+                width: 100%
+                margin-right: 0
+    .also
+        display: block 
 

@@ -24,7 +24,7 @@
 
 /* G */
 /* H */
-
+@import 'components/header';
 /* I */
 
 /* J */
@@ -33,10 +33,9 @@
 /* L */
 @import 'pages/lk';
 @import 'pages/login';
-@import 'pages/signin';
 /* M */
 
-@import 'main';
+@import 'pages/main';
 
 /* N */
 /* O */
@@ -49,6 +48,8 @@
 
 /* S */
 @import 'components/search';
+@import 'components/subscribe';
+@import 'pages/signin';
 /* T */
 
 /* U */

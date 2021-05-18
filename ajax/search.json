@@ -1,0 +1,38 @@
+{
+    "0": {
+        "img": "https://dimark.team/img/card-1.jpg",
+        "link": "https://google.com",
+        "name": "ПЛАТЬЕ MINA BELTED SHIRT",
+        "price": "11 500 Р"
+    },
+    "1": {
+        "img": "https://dimark.team/img/card-2.jpg",
+        "link": "https://google.com",
+        "name": "ПЛАТЬЕ SHIRT",
+        "price": "11 500 Р"
+    },
+    "2": {
+        "img": "https://dimark.team/img/card-3.jpg",
+        "link": "https://google.com",
+        "name": "ПЛАТЬЕ ASD",
+        "price": "11 500 Р"
+    },
+    "3": {
+        "img": "https://dimark.team/img/card-4.jpg",
+        "link": "https://google.com",
+        "name": "BELTED SHIRT",
+        "price": "11 500 Р"
+    },
+    "4": {
+        "img": "https://dimark.team/img/card-3.jpg",
+        "link": "https://google.com",
+        "name": "ПЛАТЬЕ ASD",
+        "price": "11 500 Р"
+    },
+    "5": {
+        "img": "https://dimark.team/img/card-4.jpg",
+        "link": "https://google.com",
+        "name": "ПЛАТЬЕ MINA BELTED SHIRT",
+        "price": "11 500 Р"
+    }
+}

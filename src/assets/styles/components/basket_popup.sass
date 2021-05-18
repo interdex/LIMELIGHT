@@ -1,3 +1,4 @@
+@import '../mixin.scss'
 .basket_popup
     padding: 22px 25px
     background: #FFFFFF
@@ -74,3 +75,46 @@
         font-size: 13px
         letter-spacing: 0.1em
         width: 100%
+
+.basket_item
+    &-count
+        display: flex
+        align-items: center
+        span
+            background: #F8F8F8
+            border: 1px solid #DFDFDF
+            border-radius: 4px
+            display: inline-block
+            width: 34px
+            height: 30px
+            @include center
+            position: relative
+            transition: 0.3s ease-in-out
+            cursor: pointer
+            &:before
+                content: ''
+                position: absolute
+                @include position-center
+                @include center
+                width: 13px
+                height: 1px
+                background-color: #909090
+            &:nth-last-of-type(1)
+                &:after
+                    content: ''
+                    position: absolute
+                    @include position-center
+                    @include center
+                    width: 1px
+                    height: 13px
+                    background-color: #909090
+            &:hover
+                background: #fff
+            &:active, &:focus 
+                border-color: #f0f0f0
+        input
+            width: 18px
+            margin: 0 10px
+            text-align: center
+            font-size: 12px
+            line-height: 15px

@@ -1,4 +1,6 @@
 import '../header'
+import '../common.js'
+import '../../styles/pages/catalog.sass'
 document.addEventListener("DOMContentLoaded", function (event) {
     let items = document.querySelectorAll('.catalog_item')
     let pictureItems = []

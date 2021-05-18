@@ -1,3 +1,4 @@
+@import '../mixin.scss'
 .card
     display: flex
     justify-content: space-between
@@ -129,25 +130,19 @@
         a
             margin-bottom: 30px
             display: inline-block
-            
 
-.also
-    margin-bottom: 125px
-    &_heading
-        text-transform: uppercase
-        font-size: 20px
-        line-height: 1.2em
-        margin-bottom: 42px
-    &_items
+.addtobasket
+    display: flex
+    align-items: center
+    &-btns
         display: flex
-        justify-content: space-between
-        padding: 0 190px
-    &_item
-        width: 350px
-        &-name
-            text-align: center
-            padding-top: 6px
-
+        align-items: center
+        .btn
+            font-size: 10px
+            height: 44px
+            &:nth-of-type(1)
+                margin-right: 1px
+            
 
 @media (max-width: 1024px)
     .card
@@ -155,10 +150,7 @@
             width: calc(100vw - 505px)
         &_right
             right: 25px
-    .also
-        &_items
-            padding: 0
-    
+
 @media (max-width: 768px)
     .card
         flex-direction: column
@@ -175,5 +167,6 @@
             display: none
         &_descr
             padding-left: 0
-    .also
-        display: none
+        &_images
+            a
+                margin-bottom: 0

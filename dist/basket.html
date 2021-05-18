@@ -16,11 +16,10 @@
   <!-- Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css">
 
-  <link href="basket~catalog~lk~lk_login~lk_signin~order~search.css" rel="stylesheet">
+  <link href="basket.css" rel="stylesheet">
 </head>
 
 <body>
-  <img class="maket" src="/card.jpg" alt="">
 
   <header class="header">
     <div class="header_left">
@@ -119,13 +118,63 @@
         <img src="../img/icon_basket.png" alt="">
       </button>
     </div>
+    <div class="header_popups">
+      <div class="basket_popup">
+        <div class="basket_popup-items">
+          <div class="basket_popup-item">
+            <div class="basket_popup-item-img">
+              <img src="../img/header-basket-1.jpg" alt="">
+            </div>
+            <div class="basket_popup-right">
+              <div class="basket_popup-descr">
+                <div class="basket_popup-price">11 500 ₽</div>
+                <div class="basket_popup-name">ПЛАТЬЕ MINA BELTED SHIRT</div>
+                <div class="basket_popup-info">Черный / S</div>
+              </div>
+              <div class="basket_popup-count">
+                <div class="basket_item-count">
+                  <span></span>
+                  <input type="text" placeholder="1" min="1" readonly="readonly">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basket_popup-item">
+            <div class="basket_popup-item-img">
+              <img src="../img/header-basket-2.jpg" alt="">
+            </div>
+            <div class="basket_popup-right">
+              <div class="basket_popup-descr">
+                <div class="basket_popup-price">7 000 ₽</div>
+                <div class="basket_popup-name">ПЛАТЬЕ
+                  SPORTY STYLE</div>
+                <div class="basket_popup-info">Черный / XS</div>
+              </div>
+              <div class="basket_popup-count">
+                <div class="basket_item-count">
+                  <span></span>
+                  <input type="text" placeholder="1" min="1" readonly="readonly">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="basket_popup-total">
+          <div class="basket_popup-total-title">Итого</div>
+          <div class="basket_popup-total-price">25 500 ₽</div>
+        </div>
+        <button class="btn btn-primary">ПЕРЕЙТИ В КОРЗИНУ</button>
+      </div>
+    </div>
   </header>
 
   <div class="container">
 
     <div class="basket">
       <div class="basket_left">
-        <div class="bakset_heading">КОРЗИНА</div>
+        <div class="basket_heading">КОРЗИНА</div>
         <div class="basket_items">
           <a href="#" class="basket_item">
             <div class="basket_item-img">
@@ -234,25 +283,27 @@
   </div>
 
   <section class="subscribe">
-    <div class="subscribe_heading">
-      Узнать первой о новинках и специальных предложениях
-    </div>
-    <div class="subscribe_input-wrap">
-      <input type="text" class="subscribe_input" placeholder="Введите email" maxlength="40">
-      <button class="btn btn-primary">
-        ПОДПИСАТЬСЯ
-      </button>
-    </div>
-    <label class="checkbox">
-      <input class="checkbox_input" type="checkbox">
-      <span class="checkbox_icon">
-        <img src="../img/checkbox-icon.svg" alt="">
-      </span>
-      <div class="checkbox_text">
-        Подписываясь на рассылку, вы даете согласие на обработку ваших <br>
-        персональных данных и соглашаетесь с условиями публичной оферты
+    <form class="subscribe_form">
+      <div class="subscribe_heading">
+        Узнать первой о новинках и специальных предложениях
       </div>
-    </label>
+      <div class="subscribe_input-wrap">
+        <input type="text" class="subscribe_input" placeholder="Введите email" maxlength="40">
+        <button class="btn btn-primary">
+          ПОДПИСАТЬСЯ
+        </button>
+      </div>
+      <label class="checkbox">
+        <input class="checkbox_input" type="checkbox">
+        <span class="checkbox_icon">
+          <img src="../img/checkbox-icon.svg" alt="">
+        </span>
+        <div class="checkbox_text">
+          Подписываясь на рассылку, вы даете согласие на обработку ваших <br>
+          персональных данных и соглашаетесь с условиями публичной оферты
+        </div>
+      </label>
+    </form>
   </section>
 
   <footer class="footer">
@@ -402,8 +453,21 @@
     </div>
   </div>
 
+
+  <div class="search_popup">
+    <div class="search_popup-input">
+      <div class="search_popup-icon">
+        <img src="../img/search.png" alt="">
+      </div>
+      <input type="text" placeholder="Поиск">
+      <div class="search_popup-close">
+        <img src="../img/search-close.svg" alt="">
+      </div>
+    </div>
+  </div>
+
+
   <script src="vendors~basket~card~catalog~index~lk~lk_login~lk_signin~order~search.js"></script>
-  <script src="basket~catalog~lk~lk_login~lk_signin~order~search.js"></script>
   <script src="basket.js"></script>
 </body>
 

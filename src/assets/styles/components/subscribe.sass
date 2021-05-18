@@ -1,0 +1,56 @@
+.subscribe
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background: #F9F9FB
+    padding: 35px 0
+    &_form
+        max-width: 385px
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+    &_heading
+        font-size: 12px
+        font-weight: normal
+        text-align: center
+        margin-bottom: 13px
+    &_input
+        height: 40px
+        font-size: 12px
+        font-weight: normal
+        color: #ACACAC
+        padding: 14px
+        width: 288px
+        &-wrap
+            display: flex
+            flex-direction: row
+            align-items: center
+            margin-bottom: 12px
+            width: 100%
+            .btn
+                height: 40px
+                font-size: 9px
+                font-weight: 500
+                letter-spacing: 0.15em
+                text-transform: uppercase
+                padding: 0 8px
+                width: calc(100% - 288px)
+            input
+                margin-bottom: 0px
+
+@media (max-width: 768px)
+    .subscribe
+        padding: 35px 18px
+        &_heading
+            font-size: 10px
+            margin-bottom: 18px
+        &_input
+            width: 100%
+            margin-bottom: 9px
+            &-wrap
+                width: 100%
+                flex-direction: column
+        .btn
+            width: 100%

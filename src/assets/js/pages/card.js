@@ -1,4 +1,8 @@
-import '../header'
+import '../common.js'
+import '../header.js'
+import '../../styles/pages/card.sass'
+import '../../styles/components/also.sass'
+
 import fslightbox from 'fslightbox'
 import tooltip from 'tooltip'
 import $ from 'jquery'

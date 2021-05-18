@@ -16,7 +16,7 @@
   <!-- Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css">
 
-  <link href="basket~catalog~lk~lk_login~lk_signin~order~search.css" rel="stylesheet">
+  <link href="order.css" rel="stylesheet">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
             </li>
           </ul>
         </div>
-        <form class="order_form">
+        <form class="order_form js-order-form">
           <div class="order_form-group">
             <div class="order_form-heading-wrap">
               <div class="order_form-heading">Контактная информация</div>
@@ -120,9 +120,11 @@
                 </div>
               </div>
             </div>
-            <div class="order_textarea">
+            <div class="order_textarea-wrap">
               <label>Комментарий</label>
-              <textarea name="comment"></textarea>
+              <div class="order_textarea">
+                <textarea name="comment"></textarea>
+              </div>
             </div>
           </div>
 
@@ -241,7 +243,6 @@
   </div>
 
   <script src="vendors~basket~card~catalog~index~lk~lk_login~lk_signin~order~search.js"></script>
-  <script src="basket~catalog~lk~lk_login~lk_signin~order~search.js"></script>
   <script src="order.js"></script>
 </body>
 

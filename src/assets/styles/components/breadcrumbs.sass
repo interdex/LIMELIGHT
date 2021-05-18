@@ -1,0 +1,22 @@
+.breadcrumbs
+    padding-top: 117px
+    margin-bottom: 26px
+    ul
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        li
+            margin-right: 10px
+            &:nth-last-of-type(1)
+                a:after
+                    content: unset                
+            a
+                font-size: 10px
+                line-height: 12px
+                color: #909090
+                position: relative
+                &:after
+                    content: '/'
+                    display: inline-block
+                    margin-left: 10px
+                    

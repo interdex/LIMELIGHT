@@ -1,4 +1,4 @@
+import '../common'
 import '../header'
 import '../sliders'
-
-console.log('index.js')
+import '../../styles/pages/main.sass'

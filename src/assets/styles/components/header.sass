@@ -1,0 +1,186 @@
+@import '../mixin.scss'
+.header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: absolute
+    z-index: 5
+    top: 0
+    left: 0px
+    right: 0px
+    padding: 23px 25px
+    text-transform: uppercase
+    &.sticky
+        position: fixed
+        left: 0px
+        right: 0px
+        background: #fff
+        animation: showHeader 0.8s ease-in-out
+        transition: 0.3s
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1)
+    &.fixed
+        position: fixed
+        background: #fff
+        top: 0
+        left: 0px
+        right: 0px
+        animation: hideHeader .8s ease-in-out forwards
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1)
+    &.active
+        background: #fff
+        position: fixed
+        left: 0px
+        right: 0px
+    &.transition
+        transition: 0.3s ease-in-out
+    .logo
+        font-weight: 500
+        font-size: 24px
+        letter-spacing: 0.15em
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    &_left
+        position: relative
+        ul
+            display: flex
+            align-items: center
+            >li
+                margin-right: 51px
+                &:nth-last-child(1)
+                    margin-right: 0
+                &:nth-of-type(2) 
+                    .header_subnav
+                        display: flex  
+                        align-items: flex-start
+                        justify-content: flex-start    
+                >a
+                    font-size: 14px
+    &_mobile
+        width: 22px
+        height: 12px
+        display: none
+        flex-direction: column
+        justify-content: space-between
+        position: relative
+        &+.header_search
+            display: none
+            width: 18px
+            height: 18px
+        &.active
+            span
+                &:nth-child(1), &:nth-child(4)
+                    opacity: 0
+                &:nth-child(2)
+                    transform: rotate(-45deg) translate(0px, -2px)
+                &:nth-child(3)
+                    transform: rotate(45deg) translate(calc(-50% + 1px), calc( -50% + 8px))
+        span
+            display: inline-block
+            height: 2px
+            width: 100%
+            background: #000
+            transition: 0.3s ease-in-out
+            &:nth-child(3)
+                @include position-center
+    &_subnav
+        position: fixed
+        top: 70px
+        left: 0px
+        right: 0
+        width: 100%
+        padding: 25px
+        transition: 0.3s ease-in-out
+        opacity: 0
+        visibility: hidden
+        user-select: none
+        &.active
+            opacity: 1
+            visibility: visible
+            user-select: auto
+        &.active
+            background: #fff
+        &-title
+            display: inline-block
+            padding-bottom: 15px
+            border-bottom: 1px solid #616161
+            font-size: 12px
+            line-height: 1.25em
+            width: 23.5%
+            margin-bottom: 13px
+        ul 
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            width: 23.5%
+            li
+                width: 100%
+                margin-bottom: 16px
+                a
+                    width: 100%
+                    font-size: 12px
+                    line-height: 1.25em
+        &-items
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            margin-right: 92px
+        &-item
+            width: 33.4%
+            margin-right: 53px
+            text-align: center
+            font-size: 12px
+            line-height: 1.25em
+            &:nth-last-of-type(1)
+                margin-right: 0
+            img
+                margin-bottom: 7px
+        &-contacts
+            padding-top: 25px
+            width: auto
+            margin-right: 0
+            display: flex
+            flex-direction: column
+            label
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                a
+                    text-transform: none
+                img
+                    margin-right: 6px                
+    &_right
+        display: flex
+        align-items: center
+        button
+            margin-left: 40px
+    &_lang
+        font-size: 12px
+    &_popups
+        position: fixed
+        top: 70px
+        left: 0
+        right: 0
+        width: 100%
+        z-index: 20
+        user-select: none
+        
+@media (max-width: 768px)
+    .header
+        background: #fff
+        padding: 12px 15px
+        .logo
+            font-size: 16px
+        &_nav
+            display: none
+        &_lang, &_search, &_user
+            display: none
+        &_left
+            display: flex
+            align-items: center
+        &_mobile
+            display: flex
+            margin-right: 10px
+            & + .header_search
+                display: block

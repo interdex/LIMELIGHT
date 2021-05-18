@@ -1,3 +1,4 @@
+@import '../mixin.scss'
 .order
     padding-top: 70px
     padding-bottom: 220px
@@ -23,7 +24,6 @@
         &-mobile
             @extend .order_logo
             display: none
-
     &_breadcrumbs
         margin-bottom: 35px
         text-align: center
@@ -41,7 +41,7 @@
                 &:after
                     position: absolute
                     content: ''
-                    background-image: url('../img/bread.svg')
+                    background-image: url('../../img/bread.svg')
                     background-repeat: no-repeat
                     background-size: contain
                     background-position: center
@@ -118,12 +118,22 @@
             position: relative
             label
                 position: absolute
-                top: 50%
+                top: 15px
                 left: 11px
-                transform: translate(0%, -50%)
                 font-size: 12px
                 line-height: 1.25em
                 pointer-events: none
+                user-select: none
+                transition: 0.3s
+                &.active
+                    font-size: 8px
+                    line-height: 10px
+                    top: 6px
+            input
+                width: 100%
+                height: 100%
+                padding: 15px 10px
+
     &_select
         width: 100%
         height: 44px
@@ -133,21 +143,31 @@
         select
             width: 100%
             border: none
-            padding: 10px 
+            padding: 10px
+            outline: none
     &_textarea
-        position: relative
-        textarea
-            border: 1px solid #DFDFDF
-            width: 100%
-            height: 80px
-        label
-            position: absolute
-            top: 15px
-            left: 11px
-            font-size: 12px
-            line-height: 1.25em
-            pointer-events: none
-    
+        &-wrap
+            position: relative
+            textarea
+                border: 1px solid #DFDFDF
+                width: 100%
+                height: 80px
+                outline: none
+                transition: 0.3s
+                padding: 15px 10px
+            label
+                position: absolute
+                top: 15px
+                left: 11px
+                font-size: 12px
+                line-height: 1.25em
+                pointer-events: none
+                user-select: none
+                transition: 0.3s
+                &.active
+                    font-size: 8px
+                    line-height: 10px
+                    top: 6px
     &_right
         width: calc(100% - 635px)
         padding-left: 44px
@@ -182,7 +202,6 @@
                 display: flex
                 align-items: center
                 justify-content: center
-       
         &-descr
             width: calc(100% - 64px - 17px)
             display: flex
@@ -291,7 +310,6 @@
             padding: 0
             margin-bottom: 22px
             
-
 @media (max-width: 568px)
     .order
         &_logo-mobile
@@ -326,7 +344,6 @@
                     margin-bottom: 15px
                 a
                     font-size: 10px
-
         &_input
             &-row
                 flex-direction: column

@@ -1,0 +1,117 @@
+@import '../mixin.scss'
+.main
+    position: relative
+    &_bg
+        img
+            width: 100%
+            height: 100%
+    .btn
+        @include position-center
+    &_col2
+        display: flex
+        align-items: center
+        padding: 180px 104px 150px 104px
+        &-reverse
+            flex-direction: row-reverse
+            .main_col2-left
+                justify-content: center
+                padding-right: 92px
+                padding-bottom: 274px
+            .main_col2-right
+                padding-left: 0
+                padding-right: 172px
+
+        &-left
+            width: 50%
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            padding-right: 200px
+            padding-bottom: 278px
+        &-right
+            width: 50%
+            padding-left: 172px
+            img
+                width: 100%
+        &-text
+            text-transform: uppercase
+            font-size: 20px
+            font-weight: 500
+            letter-spacing: 0.1em
+    &_block
+        padding: 0  104px
+        &-np
+            padding: 0
+        img
+            width: 100%
+            height: auto
+
+.inst
+    &_section
+        margin-top: 268px
+    &_heading
+        padding-left: 237px
+        text-transform: uppercase
+        font-size: 15px
+        font-weight: 400
+        margin-bottom: 15px
+    &_bottom
+        padding: 21px 0
+        .btn
+            margin: 0 auto
+    &_text
+        text-align: center
+        margin-bottom: 14px
+        font-size: 18px
+        font-weight: normal
+    
+
+@media (max-width: 1024px)
+    .main
+        &_col2
+            padding: 180px 20px 150px 20px
+            &-left
+                text-align: center
+                justify-content: center
+                padding: 0px
+            &-right
+                padding-left: 0
+            &-reverse 
+                .main_col2-right, .main_col2-left
+                    padding: 0
+
+@media (max-width: 768px)
+    .container
+        padding: 0 15px
+    .main
+        &_col2
+            padding: 0
+            &-left
+                display: none
+            &-right
+                width: 100%
+                padding: 0
+        &_block
+            padding: 0
+            &:nth-last-of-type(1)
+                margin-top: 12px
+                
+        .btn
+            width: 250px
+            height: 40px
+            font-size: 12px
+            top: auto
+            bottom: 50px
+            transform: translate(-50%, 0px)
+    .inst
+        &_section
+            margin-top: 28px
+        &_slider, &_heading
+            display: none
+        &_bottom
+            padding: 0 15px
+            .btn
+                font-size: 12px
+                height: 40px
+        &_text
+            font-size: 14px
