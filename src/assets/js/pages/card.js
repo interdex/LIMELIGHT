@@ -98,4 +98,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   initCardSlider()
 
+  //ADD TO BASKET
+  function initAddToBasket() {
+    let addtobasketForm = document.querySelector('.addtobasket')
+    let addtobasketSelects = document.querySelectorAll('.card_select-current')
+    let addtobasketDrops = document.querySelectorAll('.card_select-all')
+    let addtobasketOptions = document.querySelectorAll('.card_select-all span')
+
+    addtobasketSelects.forEach(function (el) {
+      el.addEventListener('click', function () {
+        this.classList.toggle('active')
+        let temp = el.querySelector('.card_select-value').innerHTML.replace(/\s/g, '');
+        // addtobasketDrops.forEach( function(elem, index){
+        //   elem.classList.remove('active')
+        // })
+        // addtobasketSelects.forEach( function(elem, index){
+        //   elem.classList.remove('active')
+        // })
+
+        this.parentNode.querySelector('.card_select-all').classList.toggle('active')
+        addtobasketOptions.forEach(function (el) {
+          el.addEventListener('click', function () {
+            temp = this.parentNode.parentNode.querySelector('.card_select-value').innerHTML.replace(/\s/g, '');
+            this.parentNode.parentNode.querySelector('input').value = this.innerHTML.replace(/\s/g, '');
+            this.parentNode.parentNode.querySelector('.card_select-value').innerHTML = this.innerHTML
+            this.innerHTML = temp
+            console.log(temp)
+            //innerHTML.replace(/\s/g, '');
+          })
+        })
+      })
+    })
+
+  }
+
+  initAddToBasket()
+
 })

@@ -132,12 +132,28 @@
             <div class="order_form-heading-wrap">
               <div class="order_form-heading">Доставка</div>
             </div>
-            <div class="order_select">
-              <select name="delivery">
-                <option value="sdek">СДЭК</option>
-                <option value="ems">EMS</option>
-                <option value="dhl" disabled="disabled">DHL</option>
-              </select>
+            <div class="order_select select">
+              <div class="select_current">
+                <input type="text" hidden value="Банковская карта / Apple Pay / Google Pay">
+                <div class="select_current-value">
+                  СДЭК (Доставка курьером)
+                </div>
+              </div>
+              <div class="select_all">
+                <span>
+                  <div class="select_all-option">
+                    DHL
+                  </div>
+                </span>
+                <span>
+                  <div class="select_all-option">
+                    Международная доставка EMS (курьером)
+                    <div class="select_all-title">
+                      7-18 дней, 1 947 руб.
+                    </div>
+                  </div>
+                </span>
+              </div>
             </div>
           </div>
 
@@ -145,13 +161,29 @@
             <div class="order_form-heading-wrap">
               <div class="order_form-heading">Оплата</div>
             </div>
-            <div class="order_select">
-              <select name="payment">
-                <option value="payment" selected="selected" disabled="disabled">Банковская карта / Apple Pay / Google Pay</option>
-                <option value="ems">Банковская карта</option>
-                <option value="dhl">Apple Pay</option>
-                <option value="dhl">Google Pay</option>
-              </select>
+            <div class="order_select select">
+              <div class="select_current">
+                <input type="text" hidden value="Банковская карта / Apple Pay / Google Pay">
+                <div class="select_current-value">
+                  <div class="select_current-value-left">
+                    Банковская карта / Apple Pay / Google Pay
+                  </div>
+                  <div class="select_current-value-right">
+                    <img src="../img/karta-1.png" alt="">
+                    <img src="../img/karta-2.png" alt="">
+                    <img src="../img/karta-3.png" alt="">
+                    <img src="../img/karta-4.png" alt="">
+                    <span>и другие</span>
+                  </div>
+                </div>
+              </div>
+              <div class="select_all">
+                <span>
+                  <div class="select_all-option">
+                    Наличные курьеру
+                  </div>
+                </span>
+              </div>
             </div>
           </div>
 
@@ -179,64 +211,67 @@
           <div class="order_total-price">26 000 ₽</div>
         </div>
 
-        <div class="order_items">
-          <div class="order_item">
-            <div class="order_item-img">
-              <img src="../img/order-1.jpg" alt="">
-              <span class="js-order-count">1</span>
-            </div>
-            <div class="order_item-descr">
-              <div class="order_item-row">
-                <div class="order_item-name">
-                  Платье Mina belted shirt
+        <div class="order_mobile-content">
+          <div class="order_items">
+            <div class="order_item">
+              <div class="order_item-img">
+                <img src="../img/order-1.jpg" alt="">
+                <span class="js-order-count">1</span>
+              </div>
+              <div class="order_item-descr">
+                <div class="order_item-row">
+                  <div class="order_item-name">
+                    Платье Mina belted shirt
+                  </div>
+                  <div class="order_item-params">
+                    Черный / S
+                  </div>
                 </div>
-                <div class="order_item-params">
-                  Черный / S
+                <div class="order_item-price">
+                  11 500 ₽
                 </div>
               </div>
-              <div class="order_item-price">
-                11 500 ₽
-              </div>
-            </div>
 
+            </div>
+            <div class="order_item">
+              <div class="order_item-img">
+                <img src="../img/order-2.jpg" alt="">
+                <span class="js-order-count">2</span>
+              </div>
+              <div class="order_item-descr">
+                <div class="order_item-row">
+                  <div class="order_item-name">
+                    Платье Mina belted shirt
+                  </div>
+                  <div class="order_item-params">
+                    Черный / S
+                  </div>
+                </div>
+                <div class="order_item-price">
+                  11 500 ₽
+                </div>
+              </div>
+
+            </div>
           </div>
-          <div class="order_item">
-            <div class="order_item-img">
-              <img src="../img/order-2.jpg" alt="">
-              <span class="js-order-count">2</span>
-            </div>
-            <div class="order_item-descr">
-              <div class="order_item-row">
-                <div class="order_item-name">
-                  Платье Mina belted shirt
-                </div>
-                <div class="order_item-params">
-                  Черный / S
-                </div>
-              </div>
-              <div class="order_item-price">
-                11 500 ₽
-              </div>
-            </div>
 
+          <div class="order_info">
+            <div class="order_info-row">
+              <div class="order_info-title">Товары</div>
+              <div class="order_info-price">25 500 ₽</div>
+            </div>
+            <div class="order_info-row">
+              <div class="order_info-title">Доставка</div>
+              <div class="order_info-price">500 ₽</div>
+            </div>
+          </div>
+
+          <div class="order_total">
+            <div class="order_total-title">Итого</div>
+            <div class="order_total-price">26 000 ₽</div>
           </div>
         </div>
 
-        <div class="order_info">
-          <div class="order_info-row">
-            <div class="order_info-title">Товары</div>
-            <div class="order_info-price">25 500 ₽</div>
-          </div>
-          <div class="order_info-row">
-            <div class="order_info-title">Доставка</div>
-            <div class="order_info-price">500 ₽</div>
-          </div>
-        </div>
-
-        <div class="order_total">
-          <div class="order_total-title">Итого</div>
-          <div class="order_total-price">26 000 ₽</div>
-        </div>
       </div>
       <a href="#" class="order_logo-mobile">LIMELIGHT</a>
     </div>

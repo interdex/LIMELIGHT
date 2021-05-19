@@ -130,18 +130,88 @@
         a
             margin-bottom: 30px
             display: inline-block
+    &_select
+        font-size: 12px
+        position: relative
+        &:nth-of-type(1)
+            .card_select-current
+                border-right: unset
+        &-current
+            height: 44px
+            border: 1px solid #909090
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 0 10px
+            &.active
+                border-top: 0
+                .card_select-img
+                    img
+                        &:nth-of-type(1)
+                            display: none
+                        &:nth-of-type(2)
+                            display: block
+        &-img
+            width: 12px
+            height: auto
+            img
+                width: 100%
+                height: auto
+                &:nth-of-type(2)
+                    display: none
+                    
+        &-all
+            position: absolute
+            bottom: 100%
+            left: 0
+            right: 0
+            width: 100%
+            background: #fff
+            @include center
+            flex-direction: column
+            border: 1px solid #909090
+            opacity: 0
+            visibility: hidden
+            user-select: none
+            &.active
+                opacity: 1
+                visibility: visible
+                user-select: auto
+            span
+                padding: 10px 0
+                width: 100%
+                display: block
+                text-align: center
+
+
 
 .addtobasket
-    display: flex
+    display: none
     align-items: center
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    background: #fff
+    z-index: 10
+    &_color
+        width: 25%
+    &_size
+        width: 15%
     &-btns
         display: flex
         align-items: center
+        width: 60%
         .btn
             font-size: 10px
             height: 44px
             &:nth-of-type(1)
                 margin-right: 1px
+                width: calc(100% - 40px)
+            &:nth-of-type(2)
+                width: 40px
+            
+
             
 
 @media (max-width: 1024px)
@@ -152,6 +222,8 @@
             right: 25px
 
 @media (max-width: 768px)
+    .addtobasket
+        display: flex
     .card
         flex-direction: column
         padding-top: 42px
@@ -168,5 +240,6 @@
         &_descr
             padding-left: 0
         &_images
+            padding: 0
             a
                 margin-bottom: 0

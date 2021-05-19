@@ -327,16 +327,47 @@
       </div>
     </section>
 
-    <div class="addtobasket">
-      <div class="addtobasket_color"></div>
-      <div class="addtobasket_size"></div>
+    <form class="addtobasket">
+      <div class="addtobasket_color card_select">
+        <div class="card_select-current">
+          <input type="text" hidden>
+          <div class="card_select-value">
+            Черный
+          </div>
+          <div class="card_select-img">
+            <img src="../img/addtobasket-arrow.svg" alt="">
+            <img src="../img/addtobasket-current.svg" alt="">
+          </div>
+        </div>
+        <div class="card_select-all">
+          <span>Белый</span>
+        </div>
+      </div>
+      <div class="addtobasket_size card_select">
+        <div class="card_select-current">
+          <input type="text" hidden>
+          <div class="card_select-value">
+            XS
+          </div>
+          <div class="card_select-img">
+            <img src="../img/addtobasket-arrow.svg" alt="">
+            <img src="../img/addtobasket-current.svg" alt="">
+          </div>
+        </div>
+        <div class="card_select-all">
+          <span>S</span>
+          <span>M</span>
+          <span>L</span>
+        </div>
+      </div>
       <div class="addtobasket-btns">
         <button class="btn btn-primary">ДОБАВИТЬ В КОРЗИНУ</button>
         <button class="btn btn-iconed">
           <img src="../img/fav-icon.png" alt="favorit">
         </button>
       </div>
-    </div>
+    </form>
+
   </div>
 
   <section class="subscribe">
