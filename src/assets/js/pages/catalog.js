@@ -2,6 +2,8 @@ import '../header'
 import '../common.js'
 import '../../styles/pages/catalog.sass'
 document.addEventListener("DOMContentLoaded", function (event) {
+
+
     let items = document.querySelectorAll('.catalog_item')
     let pictureItems = []
     let colorItems = []
@@ -34,12 +36,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 colorItems.push(...elem.children[1].querySelectorAll('a'))
                 pictureItems.push(...images)
             }
+            // console.log(pictureItems)
+            // console.log(colorItems)
         })
 
         let colorWrap = document.querySelectorAll('.catalog_item-colors')
         colorWrap.forEach(function (el) {
             el.addEventListener('mouseout', function () {
-                console.log('mouseout')
+               
             })
         })
 
@@ -47,14 +51,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
         colorItems.forEach((color, index, arr) => {
             let curImg = pictureItems[index].querySelector('img')
 
-            color.addEventListener('mouseout', onMouseOut, true);
+            // color.addEventListener('mouseout', onMouseOut, true);
 
-            // color.addEventListener("mouseout", ()=> {
-            //     if(getElementIndex(color) != 0) {
-            //         curImg.style.visibility = "hidden"
-            //         curImg.style.opacity = "0"
-            //     }
-            // })
+            color.addEventListener("mouseover", function(el) {
+                console.log(this)
+                pictureItems.forEach(function(el) {
+                    if(getElementIndex(el) != 0) {
+                        el.querySelector('img').style.visibility = "hidden"
+                        el.querySelector('img').style.opacity = "0"
+                    }
+                })
+                // console.log(curImg)
+                console.log(arr)
+                if(getElementIndex(color) != 0) {
+                    curImg.style.visibility = "visible"
+                    curImg.style.opacity = "1"
+                }
+            })
         })
     }
 

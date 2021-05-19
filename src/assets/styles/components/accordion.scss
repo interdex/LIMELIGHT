@@ -65,6 +65,7 @@ $dark:#444444;
 	background-color: $light;
 	overflow: hidden;
 	padding: 0 13px;
+	border-top: 1px solid #DFDFDF;
 	p {
 		margin-bottom: 5px;
 		font-size: 12px;
@@ -105,10 +106,10 @@ $dark:#444444;
 .accordion-content {
 	max-height: 0;
 	visibility: hidden;
-	transition: 0.8s;
+	transition: 0.5s linear;
 	* {
 		opacity: 0;
-		transition: opacity 0.8s;
+		transition: opacity 0.5s linear;
 	}
 
 }

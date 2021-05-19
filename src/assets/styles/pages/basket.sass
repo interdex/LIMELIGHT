@@ -1,10 +1,11 @@
 @import '../mixin.scss'
 .basket
-    display: flex
-    justify-content: space-between
-    align-items: flex-start
     padding-top: 125px
     margin-bottom: 235px
+    &_wrap
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
     &_left
         width: 38.75%
     &_heading
@@ -20,6 +21,8 @@
         display: flex
         align-items: flex-start
         margin-bottom: 40px
+        &:nth-last-of-type(1)
+            margin-bottom: 0            
         &-img
             width: 340px
             margin-right: 44px
@@ -34,9 +37,11 @@
         &-color
             font-size: 12px
             margin-bottom: 8px
+            line-height: 1em
         &-size
             font-size: 12px
             margin-bottom: 24px
+            line-height: 1em
         &-price
             font-size: 16px
             line-height: 20px

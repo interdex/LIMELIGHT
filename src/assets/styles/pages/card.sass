@@ -6,7 +6,24 @@
     padding: 110px 0 0 0
     margin-bottom: 208px
     &_left
-        width: calc(100vw - 780px)
+        width: 951px
+        padding-left: 125px
+        position: relative
+    &_progress
+        position: absolute
+        bottom: 0px
+        left: -15px
+        right: -15px
+        display: block
+        width: 100%
+        height: 7px
+        border-radius: 10px
+        overflow: hidden
+        background-color: #fff
+        background-image: linear-gradient(to right, #B2B2B2, #B2B2B2)
+        background-repeat: no-repeat
+        background-size: 0 100%
+        transition: background-size .4s ease-in-out
     &_right
         width: 290px // calc(100% - 1140px)
         // padding-left: 160px
@@ -130,6 +147,8 @@
         a
             margin-bottom: 30px
             display: inline-block
+           
+
     &_select
         font-size: 12px
         position: relative
@@ -212,12 +231,46 @@
                 width: 40px
             
 
-            
+.tooltip
+    position: absolute
+    top: calc(-100% - 15px)
+    left: 50%
+    transform: translateX(-50%)
+    background: rgba(68, 68, 68, 0.95)
+    font-weight: 500
+    font-size: 10px
+    line-height: 12px
+    text-align: center
+    color: #fff
+    height: 29px
+    @include center
+    padding: 0 10px
+    opacity: 0
+    visibility: hidden
+    user-select: none
+    transition: 0.3s ease-in-out
+    margin-top:  -10px
+    &.active
+        opacity: 1
+        visibility: visible
+        user-select: auto
+        margin-top:  0px
+    &:before
+        content: ""
+        position: absolute
+        top: 100%
+        left: 50%
+        transform: translateX(-50%)
+        border-left: 14px solid transparent
+        border-right: 14px solid transparent
+        border-top: 14px solid rgba(68, 68, 68, 0.95)
+
 
 @media (max-width: 1024px)
     .card
         &_left
             width: calc(100vw - 505px)
+            padding: 0
         &_right
             right: 25px
 
@@ -241,5 +294,7 @@
             padding-left: 0
         &_images
             padding: 0
+            margin-left: -15px
+            margin-right: -15px
             a
                 margin-bottom: 0

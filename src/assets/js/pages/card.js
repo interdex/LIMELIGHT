@@ -11,28 +11,63 @@ import slick from 'slick-carousel'
 document.addEventListener("DOMContentLoaded", function (event) {
 
   // TOOLTIP 
-  //ПЕРЕДЕЛАТЬ НА СВОЙСКИЙ
-  let config = {
-    showDelay: 100,
-    style: {
-      padding: '2px 20px',
-      backgroundColor: '#000000',
-      color: '#fff',
-      fontSize: 12,
-      opacity: 0.8,
-      transform: 'translateY(10px)',
-      transition: "0.3s",
-    },
-    hiddenStyle: {
 
-    },
-    visibleStyle: {
-      transform: 'translateY(0px)',
-      opacity: 1
+  class Tooltip {
+
+    constructor(color) {
+      // вызывает сеттер
+      this.color = color;
     }
+
+    init() {
+      let tooltip = document.createElement('div')
+      tooltip.classList.add('tooltip')
+      tooltip.innerHTML = this.color.dataset.tooltip
+      this.color.appendChild(tooltip)
+      this.hoverHandler() 
+    }
+
+    hoverHandler() {
+      this.color.addEventListener('mouseenter', function () {
+        this.querySelector('.tooltip').classList.add('active')
+      })
+      this.color.addEventListener('mouseout', function () {
+        this.querySelector('.tooltip').classList.remove('active')
+      })
+    }
+
   }
 
-  tooltip(config)
+  let tooltips = []
+  document.querySelectorAll('.js-tooltip').forEach(function(el){
+    tooltips.push(new Tooltip(el).init())
+  })
+
+  console.log(tooltips)
+
+  
+
+  // let config = {
+  //   showDelay: 100,
+  //   style: {
+  //     padding: '2px 20px',
+  //     backgroundColor: '#000000',
+  //     color: '#fff',
+  //     fontSize: 12,
+  //     opacity: 0.8,
+  //     transform: 'translateY(10px)',
+  //     transition: "0.3s",
+  //   },
+  //   hiddenStyle: {
+
+  //   },
+  //   visibleStyle: {
+  //     transform: 'translateY(0px)',
+  //     opacity: 1
+  //   }
+  // }
+
+  // tooltip(config)
 
 
   // ACCORDION
@@ -58,40 +93,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
   //MOBILE SLIDER 
   function initCardSlider() {
     if (window.screen.availWidth <= 768) {
-      $('.card_images').slick({
+
+
+      var $slider = $('.card_images');
+      var $progressBar = $('.card_progress');
+
+      $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+        var calc = ((nextSlide) / (slick.slideCount - 1)) * 100;
+
+        $progressBar
+          .css('background-size', calc + '% 100%')
+          .attr('aria-valuenow', calc);
+
+      });
+
+      $slider.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 400,
         dots: false,
         arrows: false,
         pauseOnDotsHover: false,
         pauseOnHover: false,
-        pauseOnFocus: false
-      })
-
-      // function setProgress(index) {
-      //   const calc = ((index + 1) / ($slider.slick('getSlick').slideCount)) * 100;
-
-      //   $progressBar
-      //     .css('background-size', `${calc}% 100%`)
-      //     .attr('aria-valuenow', calc);
-
-      //   $progressBarLabel.text(`${calc.toFixed(2)}% completed`);
-      // }
-
-      // const $slider = $('.slider');
-      // const $progressBar = $('.progress');
-      // const $progressBarLabel = $('.slider__label');
-
-      // $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-      //   setProgress(nextSlide);
-      // });
-
-      // $slider.slick({
-      //   slidesToShow: 3,
-      //   slidesToScroll: 1,
-      //   speed: 400,
-      // });
-
-      // setProgress(0);
-
+        pauseOnFocus: false,
+        adaptiveHeight: true
+      });
 
     }
   }
