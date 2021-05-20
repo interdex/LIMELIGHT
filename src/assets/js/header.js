@@ -63,7 +63,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         header.addEventListener('mouseleave', () => {
             headerHoverDisabled()
             el.parentNode.lastElementChild.classList.remove('active')
-            headerBasketPopup.classList.remove('active')
+            if (window.screen.availWidth >= 768) {
+                headerBasketPopup.classList.remove('active')
+            }
             header.classList.remove('transition')
         })
     })
@@ -71,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let burger = document.querySelector('.header_mobile')
     burger.addEventListener('click', function () {
         this.classList.toggle('active')
+        document.querySelector(".header_nav-mobile").classList.toggle('active')
     })
 
     //HEADER BASKET POPUP
@@ -91,38 +94,54 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let headerBasket = document.querySelectorAll('.header_basket')
     let headerBasketPopup = document.querySelector('.basket_popup')
     headerBasket.forEach(function (el) {
-        el.addEventListener('mouseover', function () {
-            headerHoverActive()
-            headerBasketPopup.classList.add('active')
-            header.classList.add('transition')
-            headerSubNav.forEach(function (el){
-                el.classList.remove('active')
+        if (window.screen.availWidth >= 768) {
+            el.addEventListener('mouseover', function () {
+                headerHoverActive()
+                headerBasketPopup.classList.add('active')
+                header.classList.add('transition')
+                headerSubNav.forEach(function (el) {
+                    el.classList.remove('active')
+                })
             })
-        })
-    })
-    headerBasketPopup.addEventListener('mouseout', function (ev) {
-        if (!isParent(this, ev.relatedTarget) && ev.target == this) {
-            //Event handling code here
-            headerBasketPopup.classList.remove('active')
+        } else {
+            el.addEventListener('click', function () {
+                header.classList.toggle('active')
+                header.classList.remove('fixed')
+                headerBasketPopup.classList.toggle('active')
+                header.classList.add('transition')
+                headerSubNav.forEach(function (el) {
+                    el.classList.remove('active')
+                })
+            })
         }
-    }, false)
 
-    //HEADER SEARCH POPUP
-    let headerSearchBtn = document.querySelectorAll('.header_search')
-    let searchPopupInput = document.querySelector('.search_popup input')
-    let searchPopup = document.querySelector('.search_popup')
-    let searchPopupClose = document.querySelector('.search_popup-close')
-    
-    headerSearchBtn.forEach(function (el) {
-        el.addEventListener('click', function () {
-            searchPopup.classList.add('active')
-            setTimeout(() => {
-                searchPopupInput.focus()
-            }, 100);
-        })
     })
-    searchPopupClose.addEventListener('click', function () {
-        searchPopup.classList.remove('active')
+    if (window.screen.availWidth >= 768) {
+        // headerBasketPopup.addEventListener('mouseout', function (ev) {
+        //     if (!isParent(this, ev.relatedTarget) && ev.target == this) {
+        //         //Event handling code here
+        //         headerBasketPopup.classList.remove('active')
+        //     }
+        // }, false)
+    }
+
+//HEADER SEARCH POPUP
+let headerSearchBtn = document.querySelectorAll('.header_search')
+let searchPopupInput = document.querySelector('.search_popup input')
+let searchPopup = document.querySelector('.search_popup')
+let searchPopupClose = document.querySelector('.search_popup-close')
+
+headerSearchBtn.forEach(function (el) {
+    el.addEventListener('click', function () {
+        console.log(this)
+        searchPopup.classList.add('active')
+        setTimeout(() => {
+            searchPopupInput.focus()
+        }, 100);
     })
+})
+searchPopupClose.addEventListener('click', function () {
+    searchPopup.classList.remove('active')
+})
 
 })

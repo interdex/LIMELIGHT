@@ -132,59 +132,62 @@
             <div class="order_form-heading-wrap">
               <div class="order_form-heading">Доставка</div>
             </div>
-            <div class="order_select select">
-              <div class="select_current">
-                <input type="text" hidden value="Банковская карта / Apple Pay / Google Pay">
-                <div class="select_current-value">
-                  СДЭК (Доставка курьером)
-                </div>
-              </div>
-              <div class="select_all">
-                <span>
-                  <div class="select_all-option">
-                    DHL
-                  </div>
-                </span>
-                <span>
-                  <div class="select_all-option">
-                    Международная доставка EMS (курьером)
-                    <div class="select_all-title">
-                      7-18 дней, 1 947 руб.
-                    </div>
-                  </div>
-                </span>
-              </div>
-            </div>
+
+            <label class="order_radio">
+              <div class="order_radio-text">DHL</div>
+              <input value="DHL" type="radio" name="delivery">
+              <span></span>
+            </label>
+            <label class="order_radio">
+              <div class="order_radio-text">СДЭК (Доставка курьером)</div>
+              <input value="СДЭК (Доставка курьером)" type="radio" name="delivery">
+              <span></span>
+            </label>
+
+
+            <!-- <div class="order_select select">
+                            <div class="select_current">
+                                <input type="text" hidden value="Банковская карта / Apple Pay / Google Pay">
+                                <div class="select_current-value">
+                                    СДЭК (Доставка курьером)
+                                </div>
+                            </div>
+                            <div class="select_all">
+                                <span>
+                                    <div class="select_all-option">
+                                        DHL
+                                    </div>
+                                </span>
+                                <span>
+                                    <div class="select_all-option">
+                                        Международная доставка EMS (курьером)
+                                        <div class="select_all-title">
+                                            7-18 дней, 1 947 руб.
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div> -->
           </div>
 
           <div class="order_form-group">
             <div class="order_form-heading-wrap">
               <div class="order_form-heading">Оплата</div>
             </div>
-            <div class="order_select select">
-              <div class="select_current">
-                <input type="text" hidden value="Банковская карта / Apple Pay / Google Pay">
-                <div class="select_current-value">
-                  <div class="select_current-value-left">
-                    Банковская карта / Apple Pay / Google Pay
-                  </div>
-                  <div class="select_current-value-right">
-                    <img src="../img/karta-1.png" alt="">
-                    <img src="../img/karta-2.png" alt="">
-                    <img src="../img/karta-3.png" alt="">
-                    <img src="../img/karta-4.png" alt="">
-                    <span>и другие</span>
-                  </div>
-                </div>
+
+            <label class="order_radio">
+              <div class="order_radio-text">Банковская карта / Apple Pay / Google Pay</div>
+              <input value="DHL" type="radio" name="payment" checked="checked">
+              <span></span>
+              <div class="order_radio-img">
+                <img src="../img/karta-1.png" alt="">
+                <img src="../img/karta-2.png" alt="">
+                <img src="../img/karta-3.png" alt="">
+                <img src="../img/karta-4.png" alt="">
+                <span>и другие</span>
               </div>
-              <div class="select_all">
-                <span>
-                  <div class="select_all-option">
-                    Наличные курьеру
-                  </div>
-                </span>
-              </div>
-            </div>
+            </label>
+
           </div>
 
           <div class="order_form-policy">

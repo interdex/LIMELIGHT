@@ -156,6 +156,77 @@
                     font-size: 8px
                     line-height: 10px
                     top: 6px
+    &_radio
+        width: 100%
+        height: 44px
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        border: 1px solid #DFDFDF
+        border-bottom: 0
+        padding: 15px 10px 14px 40px
+        position: relative
+        user-select: none
+        cursor: pointer
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &:nth-last-of-type(1)
+            border-bottom: 1px solid #DFDFDF            
+        >span
+            &:before, &:after
+                content: ""
+                position: absolute
+                top: 15px
+                left: 10px
+                width: 15px
+                height: 15px
+                border-radius: 50%
+            &:before
+                border: 1px solid #DFDFDF
+                background: #fff
+                z-index: 2
+            &:after
+                width: 3px
+                height: 3px
+                top: 50%
+                transform: translateY(-50%)
+                left: -17px
+                opacity: 0
+                background: #fff
+                z-index: 3
+        input
+            user-select: none
+            cursor: pointer
+            position: absolute
+            visibility: hidden
+            opacity: 0
+            &:checked + span
+                &:before
+                    border: 1px solid #000
+                    z-index: 2
+                    background: #000
+                &:after
+                    width: 3px
+                    height: 3px
+                    top: 22px
+                    left: 16px
+                    opacity: 1
+                    background: #fff
+                    z-index: 3
+        &-text
+            font-size: 12px
+            line-height: 15px
+        &-img
+            display: flex
+            align-items: center
+            img
+                margin-right: 5px
+            span
+                font-size: 8px
+                color: #616161
+
+
     &_right
         width: calc(100% - 635px)
         padding-left: 44px
@@ -311,7 +382,14 @@
             width: 100%
             padding: 0
             // margin-bottom: 22px
-            
+        &_radio
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            min-height: 44px
+            height: auto
+            &-img
+                margin-top: 4px
 .select
     &_current
         width: 100%

@@ -43,7 +43,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 Object.keys(result).forEach((key) =>{
                     let element = result[key]
                     searchValue = this.value
+                    console.log(element.name.toUpperCase().indexOf(this.value.toUpperCase()))
                     if(element.name.toUpperCase().indexOf(this.value.toUpperCase()) > -1) {
+                        console.log(element.name)
                         items += `
                             <a href="${element.link}" class="search_result-item">
                                 <div class="search_result-img">
@@ -59,12 +61,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 </div>
                             </a>
                         `
-                    } else {
-                        nofound = true
-                    }
+                    } 
                 });
 
-                if(!nofound) {
+                if(items) {
                     resultContainer.innerHTML = `
                     <div class="search_result-items">
                         ${items}
@@ -90,6 +90,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
     let search = new Search(document.querySelector('.search_input input'))
+    let searchPopup = new Search(document.querySelector('.search_popup-input input'))
     search.init()
-    console.log(search)
+    searchPopup.init()
+    console.log(searchPopup)
 })

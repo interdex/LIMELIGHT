@@ -1,3 +1,4 @@
+
 @import '../mixin.scss'
 .header
     display: flex
@@ -50,13 +51,16 @@
                 margin-right: 51px
                 &:nth-last-child(1)
                     margin-right: 0
-                &:nth-of-type(2) 
+                &:nth-of-type(2)
                     .header_subnav
-                        display: flex  
+                        display: flex
                         align-items: flex-start
-                        justify-content: flex-start    
+                        justify-content: flex-start
                 >a
                     font-size: 14px
+    &_nav
+        &-mobile
+            display: none
     &_mobile
         width: 22px
         height: 12px
@@ -109,7 +113,7 @@
             line-height: 1.25em
             width: 23.5%
             margin-bottom: 13px
-        ul 
+        ul
             display: flex
             flex-direction: column
             align-items: flex-start
@@ -121,7 +125,7 @@
                     width: 100%
                     font-size: 12px
                     line-height: 1.25em
-        .footer_right label a 
+        .footer_right label a
             margin-left: 5px
         &-items
             display: flex
@@ -151,7 +155,7 @@
                 a
                     text-transform: none
                 img
-                    margin-right: 6px                
+                    margin-right: 6px
     &_right
         display: flex
         align-items: center
@@ -167,20 +171,80 @@
         width: 100%
         z-index: 20
         user-select: none
-        
+
 @media (max-width: 768px)
     .header
         background: #fff
         padding: 12px 15px
+        &_popups
+            top: 42px
         .logo
             font-size: 16px
         &_nav
             display: none
+            &-mobile
+                display: flex
+                flex-direction: column
+                z-index: 20
+                position: absolute
+                top: 30px
+                left: -15px
+                right: 0
+                width: 100vw
+                background: #fff
+                padding: 25px 20px 32px 20px
+                overflow-y: auto
+                max-height: calc(100vh - 42px)
+                transform: translateY(-20px)
+                opacity: 0
+                visibility: hidden
+                user-select: none
+                transition: 0.3s ease-in-out
+                &.active
+                    opacity: 1
+                    transform: translateX(0)
+                    visibility: visible
+                    user-select: auto
+                a
+                    font-size: 12px
+                    line-height: 1.25em
+                    font-weight: normal
+                &-search
+                    height: 42px
+                    width: 100%
+                    position: relative
+                    background: #FFFFFF
+                    border: 1px solid #000000
+                    border-radius: 8px
+                    margin-bottom: 20px
+                    &-form
+                        padding-top: 20px
+                    img
+                        position: absolute
+                        top: 50%
+                        transform: translateY(-50%)
+                        left: 10px
+                        width: 15px
+                        height: 15px
+                        object-fit: contain
+                    input
+                        width: 100%
+                        height: 100%
+                        padding: 6px 20px 6px 40px
+                        background: transparent
+                &-lang
+                    a
+                        font-size: 12px
+                        text-transform: uppercase
+                        &.current
+                            font-weight: 600
         &_lang, &_search, &_user
             display: none
         &_left
             display: flex
             align-items: center
+            ul > li
+                margin-right: 0px
         &_mobile
             display: flex
             margin-right: 10px
