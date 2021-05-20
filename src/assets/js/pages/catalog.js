@@ -20,7 +20,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         if (e.parentNode == this || e == this) {
             return;
         }
-        console.log('MouseOut');
+        pictureItems.forEach(function(elem) {
+            if(getElementIndex(elem) == 0) {
+                elem.querySelector('img').style.visibility = "visible"
+                elem.querySelector('img').style.opacity = "1"
+            } else {
+                elem.querySelector('img').style.visibility = "hidden"
+                elem.querySelector('img').style.opacity = "0"
+            }
+        })
         // handle mouse event here!
     }
 
@@ -42,9 +50,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         let colorWrap = document.querySelectorAll('.catalog_item-colors')
         colorWrap.forEach(function (el) {
-            el.addEventListener('mouseout', function () {
-               
-            })
+            el.addEventListener('mouseout', onMouseOut, true) 
         })
 
 
@@ -54,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             // color.addEventListener('mouseout', onMouseOut, true);
 
             color.addEventListener("mouseover", function(el) {
-                console.log(this)
                 pictureItems.forEach(function(el) {
                     if(getElementIndex(el) != 0) {
                         el.querySelector('img').style.visibility = "hidden"
@@ -62,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 })
                 // console.log(curImg)
-                console.log(arr)
                 if(getElementIndex(color) != 0) {
                     curImg.style.visibility = "visible"
                     curImg.style.opacity = "1"

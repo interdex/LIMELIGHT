@@ -125,13 +125,14 @@
 
     <div class="login">
       <div class="login_heading">СОЗДАТЬ АККАУНТ</div>
-      <form class="login_form form">
+      <form action="/ajax/signin.json" class="login_form form">
         <div class="input_wrap">
           <div class="input_title-wrap">
             <div class="input_title">ИМЯ</div>
           </div>
           <div class="input">
             <input type="text" name="name" maxlength="50">
+            <div class="input_error">Поле обязательно для заполнения</div>
           </div>
         </div>
         <div class="input_wrap">
@@ -140,6 +141,7 @@
           </div>
           <div class="input">
             <input type="text" name="lastname" maxlength="50">
+            <div class="input_error"></div>
           </div>
         </div>
         <div class="input_wrap">
@@ -148,6 +150,7 @@
           </div>
           <div class="input">
             <input type="text" name="email" maxlength="50">
+            <div class="input_error"></div>
           </div>
         </div>
         <div class="input_wrap">
@@ -156,11 +159,12 @@
             <div class="input_subtitle">Забыли пароль?</div>
           </div>
           <div class="input">
-            <input type="text" name="pass" maxlength="50">
+            <input name="pass" type="password" maxlength="50">
+            <div class="input_error"></div>
           </div>
         </div>
         <label class="checkbox">
-          <input class="checkbox_input" type="checkbox">
+          <input class="checkbox_input" type="checkbox" name="subscribe">
           <span class="checkbox_icon">
             <img src="../img/checkbox-icon.svg" alt="">
           </span>

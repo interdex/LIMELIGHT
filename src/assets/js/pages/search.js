@@ -5,38 +5,26 @@ import '../../styles/components/breadcrumbs.sass'
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    function filterFunction() {
-        var input, filter, ul, li, a, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        div = document.getElementById("myDropdown");
-        a = div.getElementsByTagName("a");
-        for (i = 0; i < a.length; i++) {
-          txtValue = a[i].textContent || a[i].innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-          } else {
-            a[i].style.display = "none";
-          }
-        }
-      }
-
-      
     class Search {
 
         constructor(input) {
           // вызывает сеттер
           this.input = input;
+          
         }
 
         init() {
+            let submitHandler =  this.submitHandler.bind(this)
+
             this.input.addEventListener('keyup', async function (e) {
+                let searchHTML = document.querySelector('.search_title')
                 let response = await fetch('/ajax/search.json');
                 let result = await response.json();
                 let resultContainer  = this.parentNode.parentNode.querySelector('.search_result')
                 let items = ""
                 let nofound = false
                 let searchValue;
+                searchHTML.innerHTML = "ПОИСК ПО САЙТУ"
                 resultContainer.innerHTML = "";
                 resultContainer.classList.add('active')
                 nofound = false
@@ -73,9 +61,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     `
                 } else {
                     resultContainer.innerHTML = `
-                    <div class="search_result-notfound">Ваш поиск по запросу "${searchValue}" не дал никаких результатов. \<br/>
+                    <div class="search_result-notfound hidden">Ваш поиск по запросу "${searchValue}" не дал никаких результатов. \<br/>
                     Измените условия поиска и попробуйте еще раз.</div>
                     `
+                    submitHandler()
                 }
 
             })
@@ -83,6 +72,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
             this.input.addEventListener('blur', function (event) {
                 this.parentNode.parentNode.querySelector('.search_result').classList.remove('active')
             })
+        }
+
+        submitHandler() {
+            console.log(this)
+            let form = this.input.parentNode.parentNode
+            let errorContainer = form.querySelector('.search_result')
+            let error = form.querySelector('.search_result-notfound')
+            let searchHTML = document.querySelector('.search_title')
+            console.log(error)
+            form.addEventListener('submit', function (event) {
+                event.preventDefault()
+                errorContainer.classList.add('active')
+                error.classList.remove('hidden')
+                searchHTML.innerHTML = "К СОЖАЛЕНИЮ, ПОИСК НЕ ДАЛ РЕЗУЛЬТАТОВ!"
+            })
+
         }
       
       }
@@ -93,5 +98,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let searchPopup = new Search(document.querySelector('.search_popup-input input'))
     search.init()
     searchPopup.init()
+
+   
     console.log(searchPopup)
 })

@@ -24,7 +24,7 @@
 $white: rgba(254,255,250,1)
 $grey: rgba(220,231,235,1)
 $red: rgba(255,104,115,1)
-$black: rgba(48,69,92,0.8)
+$black: #000
 $sans: 'Titillium Web', sans-serif
 
 
@@ -49,6 +49,8 @@ $sans: 'Titillium Web', sans-serif
                 animation-delay: 0.75s
             &:nth-of-type(3)
                 animation-delay: 1.0s
+            &:nth-of-type(4)
+                animation-delay: 1.25s
                 .accordion-content
                     padding-left: 0
                 .header_subnav-contacts
@@ -100,7 +102,6 @@ $sans: 'Titillium Web', sans-serif
                 color: $black
                 font-size: 17px
                 line-height: 26px
-                letter-spacing: 1px
                 position: relative
                 overflow: hidden
                 max-height: 800px
@@ -110,6 +111,23 @@ $sans: 'Titillium Web', sans-serif
                 margin-top: 22px
                 z-index: 2
                 padding-left: 15px
+                table
+                    border-collapse: collapse
+                    tr
+                        td
+                            min-height: 37px
+                            padding: 9px 6px
+                            background: #F4F4F4
+                            font-size: 10px
+                            line-height: 12px
+                            text-align: center
+                            border: 0.5px solid #C1C1C1
+                            &:nth-child(1)
+                                background: #000000
+                                color: #fff
+                                font-weight: 500
+
+                                
                 a
                     display: block
                     font-size: 12px
@@ -137,3 +155,21 @@ $sans: 'Titillium Web', sans-serif
                             margin: 0 0 20px 0
                             width: 100%
                             text-align: left
+                ul
+                    li
+                        padding-left: 40px
+                        margin-bottom: 25px
+                        position: relative
+                        &:nth-last-of-type(1)
+                            margin-bottom: 0
+                        &:before
+                            content: ""
+                            width: 4px
+                            height: 4px
+                            border-radius: 50%
+                            background: #000000
+                            position: absolute
+                            top: 5px
+                            left: 25px
+                            
+                        

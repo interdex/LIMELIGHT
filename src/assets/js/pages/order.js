@@ -1,6 +1,7 @@
 import '../common.js'
 import '../form.js'
 import '../../styles/pages/order.sass'
+import '../../styles/components/form.sass'
 
 
 document.addEventListener("DOMContentLoaded", function (event) {

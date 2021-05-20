@@ -67,7 +67,7 @@
             display: block
             padding: 30px 0
             .accordion
-                margin-bottom: 30px
+                // margin-bottom: 30px
                 input[type=radio]
                     &:checked
                         & + label
@@ -102,6 +102,16 @@
                         font-size: 12px
                         &:after
                             content: unset
+                ul li 
+                    .accordion-content 
+                        label
+                            margin-bottom: 8px
+                            display: flex
+                            a
+                                margin-left: 0
+                            &:nth-of-type(1)
+                                a
+                                    margin-left: 5px
             &_soc
                 display: flex
                 justify-content: center

@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       tooltip.classList.add('tooltip')
       tooltip.innerHTML = this.color.dataset.tooltip
       this.color.appendChild(tooltip)
-      this.hoverHandler() 
+      this.hoverHandler()
     }
 
     hoverHandler() {
@@ -39,35 +39,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 
   let tooltips = []
-  document.querySelectorAll('.js-tooltip').forEach(function(el){
+  document.querySelectorAll('.js-tooltip').forEach(function (el) {
     tooltips.push(new Tooltip(el).init())
   })
-
-  console.log(tooltips)
-
-  
-
-  // let config = {
-  //   showDelay: 100,
-  //   style: {
-  //     padding: '2px 20px',
-  //     backgroundColor: '#000000',
-  //     color: '#fff',
-  //     fontSize: 12,
-  //     opacity: 0.8,
-  //     transform: 'translateY(10px)',
-  //     transition: "0.3s",
-  //   },
-  //   hiddenStyle: {
-
-  //   },
-  //   visibleStyle: {
-  //     transform: 'translateY(0px)',
-  //     opacity: 1
-  //   }
-  // }
-
-  // tooltip(config)
 
 
   // ACCORDION
@@ -135,12 +109,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
       el.addEventListener('click', function () {
         this.classList.toggle('active')
         let temp = el.querySelector('.card_select-value').innerHTML.replace(/\s/g, '');
-        // addtobasketDrops.forEach( function(elem, index){
-        //   elem.classList.remove('active')
-        // })
-        // addtobasketSelects.forEach( function(elem, index){
-        //   elem.classList.remove('active')
-        // })
+
+     
 
         this.parentNode.querySelector('.card_select-all').classList.toggle('active')
         addtobasketOptions.forEach(function (el) {
@@ -149,15 +119,60 @@ document.addEventListener("DOMContentLoaded", function (event) {
             this.parentNode.parentNode.querySelector('input').value = this.innerHTML.replace(/\s/g, '');
             this.parentNode.parentNode.querySelector('.card_select-value').innerHTML = this.innerHTML
             this.innerHTML = temp
-            console.log(temp)
             //innerHTML.replace(/\s/g, '');
+              el.parentNode.parentNode.querySelector('.card_select-current').click()
+              // addtobasketDrops.forEach( function(elem, index){
+              //   elem.classList.remove('active')
+              // })
+              // addtobasketSelects.forEach( function(elem, index){
+              //   elem.classList.remove('active')
+              // })
           })
         })
+       
+        
       })
     })
+
+    let footerMobile = document.querySelector('.footer-mobile')
+
+    window.addEventListener('scroll', () => {
+      if(window.screen.availWidth <= 768) {
+        if (elementInViewport2(footerMobile)) {
+          addtobasketForm.style.display = 'none';
+        } else {
+          addtobasketForm.style.display = 'flex';
+        }
+      }
+      
+    })
+
 
   }
 
   initAddToBasket()
+
+
+  function elementInViewport2(el) {
+    var top = el.offsetTop;
+    var left = el.offsetLeft;
+    var width = el.offsetWidth;
+    var height = el.offsetHeight;
+
+    while (el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
+
+    return (
+      top < (window.pageYOffset + window.innerHeight) &&
+      left < (window.pageXOffset + window.innerWidth) &&
+      (top + height) > window.pageYOffset &&
+      (left + width) > window.pageXOffset
+    );
+  }
+
+
 
 })
