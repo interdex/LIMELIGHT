@@ -168,6 +168,15 @@ const plugins = () => {
             }
         }),
        
+        new HtmlWebpackPlugin({
+            filename:'search-result.html',
+            template: 'search-result.html',
+            chunks: ['search-result'],
+            minify: {
+                collapseWithSpace: isProd
+            }
+        }),
+       
         //new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
             patterns: [
@@ -200,6 +209,7 @@ module.exports = {
         'lk_signin': ['@babel/polyfill', './index.js', './assets/js/pages/signin.js'],
         'lk': ['@babel/polyfill', './index.js', './assets/js/pages/lk.js'],
         'search': ['@babel/polyfill', './index.js', './assets/js/pages/search.js'],
+        'search-result': ['@babel/polyfill', './index.js', './assets/js/pages/search-result.js'],
     },
     output: {
         filename:  fileName('js'),

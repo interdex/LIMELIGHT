@@ -109,5 +109,116 @@
                 opacity: 0
                 visibility: hidden
                 user-select: none
+    &_res
+        // padding-top: 155px
+        &-heading
+            font-size: 25px
+            line-height: 30px
+            margin-bottom: 40px
+        &-items
+            display: flex
+            justify-content: flex-start
+            flex-direction: column
+            margin-bottom: 225px
+        &-item
+            display: flex
+            align-items: flex-start
+            margin-bottom: 30px
+            &-img
+                width: 350px
+                img
+                    width: 100%
+                    height: auto
+                    display: block
+            &-descr
+                width: calc(100% - 350px)
+                padding-left: 120px
+                padding-top: 10px
+            &-name
+                font-size: 18px
+                line-height: 22px
+                letter-spacing: 0.1em
+                margin-bottom: 22px
+            &-price
+                font-size: 16px
+                line-height: 20px
+                margin-bottom: 11px
+            &-info
+                font-size: 12px
+                line-height: 15px
+        &-pag
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-bottom: 44px
+            >a
+                font-size: 12px
+                line-height: 15px
+                color: #909090
+                position: relative
+                display: flex
+                align-items: center
 
-    
+                img
+                    width: 10px
+                    height: auto
+                &:nth-of-type(1)
+                    img
+                        margin-right: 10px
+                        transform: scale(-1)
+                &:nth-last-of-type(1)
+                    img
+                        margin-left: 10px
+            ul
+                display: flex
+                align-items: center
+                margin: 0 20px
+                li
+                    margin-right: 15px
+                    &:nth-last-of-type(1)
+                        margin-right: 0                        
+                    a
+                        font-size: 12px
+                        line-height: 15px
+                        color: #909090 
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        width: 40px
+                        height: 40px
+                        border: 1px solid #DFDFDF
+                        &.current, &:hover
+                            color: #fff
+                            border-color: #909090
+                            background: #909090
+
+@media (max-width: 768px)
+    .breadcrumbs
+        margin-top: 15px
+        margin-bottom: 10px !important
+        ul
+            width: 100%
+            justify-content: center !important
+    .search
+        &_res
+            &-items
+                margin-bottom: 50px
+            &-item
+                flex-direction: column
+                margin-bottom: 40px
+                &-img
+                    width: 100%
+                &-descr
+                    width: 100%
+                    padding-left: 0
+                    padding-top: 20px
+            &-pag 
+                > a
+                    font-size: 10px
+                ul
+                    li
+                        margin-right: 10px
+                        a
+                            width: 25px
+                            height: 25px
+
