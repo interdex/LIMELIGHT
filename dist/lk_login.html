@@ -20,8 +20,6 @@
 </head>
 
 <body>
-  <img class="maket" src="/card.jpg" alt="">
-
   <header class="header">
     <div class="header_left">
       <div class="header_mobile">
@@ -85,17 +83,94 @@
                 <div class="footer_heading">СВЯЗАТЬСЯ С НАМИ</div>
                 <label>Телефон <a href="tel:+79154707711">+7 (915) 470-77-11</a> </label>
                 <div class="footer_title">Напишите нам</div>
-                <label> <a href="https://api.whatsapp.com/send/?phone=+79154707711">WhatsApp +7 (915)
-                    470-77-11</a>
+                <label>
+                  <img src="../img/top-menu-wa.png" alt="">
+                  <a href="https://api.whatsapp.com/send/?phone=+79154707711">WhatsApp +7 (915) 470-77-11</a>
                 </label>
-                <label> <a href="https://www.instagram.com/instagram/lime11ght">Direct Instagram
-                    @lime11ght</a> </label>
+                <label>
+                  <img src="../img/top-menu-inst.png" alt="">
+                  <a href="https://www.instagram.com/instagram/lime11ght">Direct Instagram @lime11ght</a>
+                </label>
               </div>
             </nav>
           </li>
         </ul>
       </nav>
-      <div class="header_nav-mobile">
+      <div class="header_nav-mobile accordion">
+        <ul>
+          <li>
+            <input type="checkbox" checked="checked">
+            <i></i>
+            <h2>КУПИТЬ</h2>
+            <div class="accordion-content">
+              <a href="#">ВСЯ ОДЕЖДА</a>
+              <a href="#">ПЛАТЬЯ</a>
+              <a href="#">КОМПЛЕКТЫ</a>
+              <a href="#">СВИТЕРЫ</a>
+              <a href="#">ЮБКИ И БРЮКИ</a>
+              <a href="#">ЖАКЕТЫ</a>
+              <a href="#">ТОПЫ И БОДИ</a>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" checked="checked">
+            <i></i>
+            <h2>УЗНАТЬ БОЛЬШЕ</h2>
+            <div class="accordion-content">
+              <nav class="header_subnav">
+                <div class="header_subnav-items">
+                  <a href="#" class="header_subnav-item">
+                    <img src="../img/subnav-1.jpg" alt="">
+                    ВОПРОСЫ И ОТВЕТЫ
+                  </a>
+                  <a href="#" class="header_subnav-item">
+                    <img src="../img/subnav-2.jpg" alt="">
+                    О НАС
+                  </a>
+                  <a href="#" class="header_subnav-item">
+                    <img src="../img/subnav-3.jpg" alt="">
+                    ДОСТАВКА И ВОЗВРАТ
+                  </a>
+                </div>
+
+              </nav>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" checked="checked">
+            <i></i>
+            <h2>СВЯЗАТЬСЯ С НАМИ</h2>
+            <div class="accordion-content">
+              <div class="header_subnav-contacts footer_right">
+                <label>Телефон <a href="tel:+79154707711">+7 (915) 470-77-11</a> </label>
+                <div class="footer_title">Напишите нам</div>
+                <label>
+                  <img src="../img/top-menu-wa.png" alt="">
+                  <a href="https://api.whatsapp.com/send/?phone=+79154707711">WhatsApp +7 (915) 470-77-11</a>
+                </label>
+                <label>
+                  <img src="../img/top-menu-inst.png" alt="">
+                  <a href="https://www.instagram.com/instagram/lime11ght">Direct Instagram @lime11ght</a>
+                </label>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+
+        <a href="#">ВОЙТИ</a>
+
+        <form class="header_nav-mobile-search-form">
+          <div class="header_nav-mobile-search">
+            <img src="../img/search.png" alt="">
+            <input type="text" placeholder="Поиск">
+          </div>
+        </form>
+
+        <div class="header_nav-mobile-lang">
+          <a href="#">EN</a>
+          <a href="#" class="current">RU</a>
+        </div>
 
       </div>
     </div>
@@ -117,7 +192,58 @@
       </button>
       <button class="header_basket">
         <img src="../img/icon_basket.png" alt="">
+        <span>2</span>
       </button>
+    </div>
+    <div class="header_popups">
+      <div class="basket_popup">
+        <div class="basket_popup-items">
+          <div class="basket_popup-item">
+            <div class="basket_popup-item-img">
+              <img src="../img/header-basket-1.jpg" alt="">
+            </div>
+            <div class="basket_popup-right">
+              <div class="basket_popup-descr">
+                <div class="basket_popup-price">11 500 ₽</div>
+                <div class="basket_popup-name">ПЛАТЬЕ MINA BELTED SHIRT</div>
+                <div class="basket_popup-info">Черный / S</div>
+              </div>
+              <div class="basket_popup-count">
+                <div class="basket_item-count">
+                  <span></span>
+                  <input type="text" placeholder="1" min="1" readonly="readonly">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basket_popup-item">
+            <div class="basket_popup-item-img">
+              <img src="../img/header-basket-2.jpg" alt="">
+            </div>
+            <div class="basket_popup-right">
+              <div class="basket_popup-descr">
+                <div class="basket_popup-price">7 000 ₽</div>
+                <div class="basket_popup-name">ПЛАТЬЕ
+                  SPORTY STYLE</div>
+                <div class="basket_popup-info">Черный / XS</div>
+              </div>
+              <div class="basket_popup-count">
+                <div class="basket_item-count">
+                  <span></span>
+                  <input type="text" placeholder="1" min="1" readonly="readonly">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="basket_popup-total">
+          <div class="basket_popup-total-title">Итого</div>
+          <div class="basket_popup-total-price">25 500 ₽</div>
+        </div>
+        <button class="btn btn-primary">ПЕРЕЙТИ В КОРЗИНУ</button>
+      </div>
     </div>
   </header>
 
@@ -237,10 +363,8 @@
           <div class="footer_heading">СВЯЗАТЬСЯ С НАМИ</div>
           <label>Телефон <a href="tel:+79154707711">+7 (915) 470-77-11</a> </label>
           <div class="footer_title">Напишите нам</div>
-          <label> <a href="https://api.whatsapp.com/send/?phone=+79154707711">WhatsApp +7 (915) 470-77-11</a>
-          </label>
-          <label> <a href="https://www.instagram.com/instagram/lime11ght">Direct Instagram @lime11ght</a>
-          </label>
+          <label> <a href="https://api.whatsapp.com/send/?phone=+79154707711">WhatsApp +7 (915) 470-77-11</a> </label>
+          <label> <a href="https://www.instagram.com/instagram/lime11ght">Direct Instagram @lime11ght</a> </label>
           <div class="footer_soc">
             <a href="https://api.whatsapp.com/send/?phone=+79154707711" class="soc_item">
               <img src="../img/whatapp.png" alt="">
@@ -313,11 +437,9 @@
                 <label>Телефон <a href="tel:+79154707711">+7 (915) 470-77-11</a> </label>
                 <div class="footer_title">Напишите нам</div>
                 <label>
-                  <img src="../img/top-menu-wa.png" alt="">
                   <a href="https://api.whatsapp.com/send/?phone=+79154707711">WhatsApp +7 (915) 470-77-11</a>
                 </label>
                 <label>
-                  <img src="../img/top-menu-inst.png" alt="">
                   <a href="https://www.instagram.com/instagram/lime11ght">Direct Instagram @lime11ght</a>
                 </label>
               </div>
@@ -334,22 +456,31 @@
           <img src="../img/footer-m-inst.png" alt="">
         </a>
       </div>
+      <div class="footer-mobile_copy">
+        &#169; 2021 LIMELIGHT
+      </div>
     </div>
   </div>
 
   <div class="search_popup">
+    <form class="search_popup-form">
 
-    <div class="search_popup-input">
-      <div class="search_popup-icon">
-        <img src="../img/search.png" alt="">
+      <div class="search_popup-input">
+        <div class="search_popup-icon">
+          <img src="../img/search.png" alt="">
+        </div>
+        <div class="search_popup-input">
+          <input type="text" placeholder="Поиск">
+        </div>
+        <div class="search_popup-close">
+          <img src="../img/search-close.svg" alt="">
+          <img src="../img/close-search-m.svg" alt="">
+        </div>
+        <div class="search_result"></div>
       </div>
-      <input type="text" placeholder="Поиск">
-      <div class="search_popup-close">
-        <img src="../img/search-close.svg" alt="">
-      </div>
-    </div>
+    </form>
   </div>
-  <script src="vendors~basket~card~catalog~index~lk~lk_login~lk_signin~order~search.js"></script>
+  <script src="vendors~basket~card~catalog~index~lk~lk_login~lk_signin~order~search~search-result.js"></script>
   <script src="lk_login.js"></script>
 </body>
 
