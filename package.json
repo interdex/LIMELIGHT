@@ -7,7 +7,7 @@
     "dev": "del-cli dist cross-env NODE_ENV=development webpack --mode development",
     "build": "del-cli dist && cross-env NODE_ENV=production webpack --mode production && html dist/*.html --indent-size 2",
     "watch": "del-cli dist cross-env NODE_ENV=development webpack --mode development --watch",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --host 192.168.137.1",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open ",
     "build-and-beautify": "del-cli dist && webpack --mode production && html dist/*.html --indent-size 2",
     "beautify": "html dist/*.html --indent-size 2"
   },

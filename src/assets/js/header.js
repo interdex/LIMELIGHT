@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let lastScrollTop = 0;
     let headerHover = false;
 
+
     // HEADER STICKY SCROLL
     window.addEventListener('scroll', () => {
         st = window.pageYOffset || document.documentElement.scrollTop;
@@ -125,23 +126,36 @@ document.addEventListener("DOMContentLoaded", function (event) {
         // }, false)
     }
 
-//HEADER SEARCH POPUP
-let headerSearchBtn = document.querySelectorAll('.header_search')
-let searchPopupInput = document.querySelector('.search_popup input')
-let searchPopup = document.querySelector('.search_popup')
-let searchPopupClose = document.querySelector('.search_popup-close')
+    //HEADER SEARCH POPUP
+    let headerSearchBtn = document.querySelectorAll('.header_search')
+    let searchPopupInput = document.querySelector('.search_popup input')
+    let searchPopup = document.querySelector('.search_popup')
+    let searchPopupClose = document.querySelector('.search_popup-close')
 
-headerSearchBtn.forEach(function (el) {
-    el.addEventListener('click', function () {
-        console.log(this)
-        searchPopup.classList.add('active')
-        setTimeout(() => {
-            searchPopupInput.focus()
-        }, 100);
+    headerSearchBtn.forEach(function (el) {
+        el.addEventListener('click', function () {
+            console.log(this)
+            searchPopup.classList.add('active')
+            setTimeout(() => {
+                searchPopupInput.focus()
+            }, 100);
+        })
     })
-})
-searchPopupClose.addEventListener('click', function () {
-    searchPopup.classList.remove('active')
-})
+    searchPopupClose.addEventListener('click', function () {
+        searchPopup.classList.remove('active')
+    })
+
+
+    let mobileSearchBtn = document.querySelector('.header_nav-mobile-search input')
+    let mobileAccordionItems = document.querySelectorAll('.header_nav-mobile input')
+    mobileSearchBtn.addEventListener('focus', function(){
+        
+        mobileAccordionItems.forEach(function(el){
+            el.setAttribute('checked','checked')
+            el.checked = true
+        })
+    })
+
+
 
 })

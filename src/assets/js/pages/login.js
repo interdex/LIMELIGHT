@@ -1,3 +1,4 @@
+import '../header.js'
 import '../form.js'
 import '../common.js'
 import '../../styles/components/form.sass'

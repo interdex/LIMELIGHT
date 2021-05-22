@@ -15,10 +15,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if(input.value.trim() !== ''){
                     validate = true
                     input.parentNode.classList.remove('error')
+                    input.parentNode.parentNode.classList.remove('error')
                     errorHTML.classList.remove('active')
                 } else {
                     validate = false
                     input.parentNode.classList.add('error')
+                    input.parentNode.parentNode.classList.add('error')
                     errorHTML.classList.add('active')
                     errorHTML.innerHTML = "Поле обязательно для заполнения"
                 }

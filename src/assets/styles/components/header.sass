@@ -78,8 +78,8 @@
         position: relative
         &+.header_search
             display: none
-            width: 18px
-            height: 18px
+            width: 16px
+            height: 16px
         &.active
             span
                 &:nth-child(1), &:nth-child(4)
@@ -170,7 +170,12 @@
         display: flex
         align-items: flex-start
         button
+            width: 16px
+            height: 16px
             margin-left: 40px
+            img
+                width: 100%
+                height: auto
     &_basket
         position: relative
         span
@@ -213,7 +218,7 @@
             &-mobile
                 display: flex
                 flex-direction: column
-                z-index: 20
+                z-index: 40
                 position: absolute
                 top: 30px
                 left: -15px
@@ -283,3 +288,8 @@
                 padding-top: 0
                 label:nth-child(1)
                     margin-bottom: 5px
+        &_right
+            button
+                width: 18px
+                height: 18px
+                margin-left: 10px

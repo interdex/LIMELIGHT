@@ -72,8 +72,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
       var $slider = $('.card_images');
       var $progressBar = $('.card_progress');
 
+      $slider.on('init', function (event, slick, currentSlide, nextSlide) {
+        console.log('init')
+        var calc = ((1) / (slick.slideCount )) * 100;
+          $progressBar
+          .css('background-size', calc + '% 100%')
+          .attr('aria-valuenow', calc);
+        });
       $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        var calc = ((nextSlide) / (slick.slideCount - 1)) * 100;
+        var calc = ((nextSlide+1) / (slick.slideCount )) * 100;
 
         $progressBar
           .css('background-size', calc + '% 100%')
@@ -90,7 +97,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         pauseOnDotsHover: false,
         pauseOnHover: false,
         pauseOnFocus: false,
-        adaptiveHeight: true
       });
 
     }
