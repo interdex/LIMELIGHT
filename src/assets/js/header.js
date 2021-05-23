@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     burger.addEventListener('click', function () {
         this.classList.toggle('active')
         document.querySelector(".header_nav-mobile").classList.toggle('active')
+        headerBasketPopup.classList.remove('active')
     })
 
     //HEADER BASKET POPUP
