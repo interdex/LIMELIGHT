@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     headerBasket.forEach(function (el) {
         if (window.screen.availWidth >= 768) {
             el.addEventListener('mouseover', function () {
-                headerHoverActive()
+                // headerHoverActive()
                 headerBasketPopup.classList.add('active')
                 header.classList.add('transition')
                 headerSubNav.forEach(function (el) {
