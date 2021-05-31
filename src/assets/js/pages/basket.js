@@ -1,4 +1,5 @@
 import '../common'
 import '../header'
+import '../form'
 import '../../styles/components/also.sass'
 import '../../styles/pages/basket.sass'

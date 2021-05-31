@@ -2,6 +2,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #000;
 }
+
+body.overflow {
+  overflow: hidden;
+}
   
 .maket {
   z-index: 10;

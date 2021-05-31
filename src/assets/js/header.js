@@ -71,11 +71,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         })
     })
 
+    //HEADER MOBILE
+
     let burger = document.querySelector('.header_mobile')
     burger.addEventListener('click', function () {
         this.classList.toggle('active')
+        document.querySelector('body').classList.toggle('overflow')
         document.querySelector(".header_nav-mobile").classList.toggle('active')
         headerBasketPopup.classList.remove('active')
+        closeSubNavAccordion()
     })
 
     //HEADER BASKET POPUP
@@ -149,12 +153,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     let mobileSearchBtn = document.querySelector('.header_nav-mobile-search input')
     let mobileAccordionItems = document.querySelectorAll('.header_nav-mobile input')
-    mobileSearchBtn.addEventListener('focus', function(){
-        
+
+    function closeSubNavAccordion() {
         mobileAccordionItems.forEach(function(el){
             el.setAttribute('checked','checked')
             el.checked = true
         })
+    }
+
+    mobileSearchBtn.addEventListener('focus', function(){
+        closeSubNavAccordion()
     })
 
 
