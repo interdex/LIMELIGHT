@@ -86,6 +86,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     //HEADER BASKET POPUP
 
+    // document.querySelector('body').addEventListener('click', function (e) {
+    //     console.log(e.target)
+    //     console.log(document.querySelector(e.target).classList)
+    //     if (document.querySelector(e.target).classList.contains("overflow")) {
+    //         document.querySelector(".header_nav-mobile").classList.remove("active")
+    //         document.querySelector(".header_mobile").classList.remove("active")
+    //     }
+    // })
+ 
+
     //Detect if otherNode is contained by refNode
     function isParent(refNode, otherNode) {
         var parent = otherNode.parentNode;
