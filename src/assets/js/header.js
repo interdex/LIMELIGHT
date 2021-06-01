@@ -7,32 +7,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     // HEADER STICKY SCROLL
     window.addEventListener('scroll', () => {
-        st = window.pageYOffset || document.documentElement.scrollTop;
-        if (!header.classList.contains('active')) {
-            if (st > lastScrollTop) {
-                // downscroll code
-                if (window.scrollY > window.innerHeight) {
-                    header.classList.remove('fixed')
-                    header.classList.add('sticky')
-                } else if (window.innerHeight - window.scrollY >= 1 && window.innerHeight - window.scrollY <= 200) {
-                    // header.classList.add('fixed')
-                    // header.classList.remove('sticky')
+        if (window.screen.availWidth >= 768) {
+            st = window.pageYOffset || document.documentElement.scrollTop;
+            if (!header.classList.contains('active')) {
+                if (st > lastScrollTop) {
+                    // downscroll code
+                    if (window.scrollY > window.innerHeight) {
+                        header.classList.remove('fixed')
+                        header.classList.add('sticky')
+                    } else if (window.innerHeight - window.scrollY >= 1 && window.innerHeight - window.scrollY <= 200) {
+                        // header.classList.add('fixed')
+                        // header.classList.remove('sticky')
+                    } else {
+                        header.classList.remove('fixed')
+                        header.classList.remove('sticky')
+                    }
                 } else {
-                    header.classList.remove('fixed')
-                    header.classList.remove('sticky')
+                    // upscroll code
+                    if (window.scrollY > window.innerHeight) {
+                    } else if (window.innerHeight - window.scrollY >= 1 && window.innerHeight - window.scrollY <= window.innerHeight - 20) {
+                        header.classList.add('fixed')
+                        header.classList.remove('sticky')
+                    } else {
+                        header.classList.remove('fixed')
+                        header.classList.remove('sticky')
+                    }
                 }
-            } else {
-                // upscroll code
-                if (window.scrollY > window.innerHeight) {
-                } else if (window.innerHeight - window.scrollY >= 1 && window.innerHeight - window.scrollY <= window.innerHeight - 20) {
-                    header.classList.add('fixed')
-                    header.classList.remove('sticky')
-                } else {
-                    header.classList.remove('fixed')
-                    header.classList.remove('sticky')
-                }
+                lastScrollTop = st <= 0 ? 0 : st
             }
-            lastScrollTop = st <= 0 ? 0 : st
         }
     })
 
@@ -111,10 +113,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             })
         } else {
             el.addEventListener('click', function () {
-                header.classList.toggle('active')
+                header.classList.remove('active')
                 header.classList.remove('fixed')
                 headerBasketPopup.classList.toggle('active')
                 header.classList.add('transition')
+                document.querySelector(".header_nav-mobile").classList.remove("active")
+                document.querySelector(".header_mobile").classList.remove("active")
+                document.querySelector('body').classList.remove('overflow')
                 headerSubNav.forEach(function (el) {
                     el.classList.remove('active')
                 })
