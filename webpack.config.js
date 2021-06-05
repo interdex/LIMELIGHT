@@ -28,7 +28,6 @@ function generateHtmlPlugins(templateDir) {
         })
     })
 }
-const htmlPlugins = generateHtmlPlugins('./src/assets/html/views')
 
 //Оптимизация??
 const optimization = () => {
@@ -218,7 +217,6 @@ module.exports = {
     resolve: {
         //extensions: ['.js', '.json', '.png'],
         alias: {
-            '@views': path.resolve(__dirname, 'src/html/views'),
             '@includes': path.resolve(__dirname, 'src/html/includes'),
             '@scss': path.resolve(__dirname, 'src/scss'),
             '@': path.resolve(__dirname, 'src'),
