@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         document.querySelector(".header_nav-mobile").classList.toggle('active')
         headerBasketPopup.classList.remove('active')
         closeSubNavAccordion()
+        searchPopup.classList.remove('active')
     })
 
     //HEADER BASKET POPUP
@@ -133,6 +134,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 headerSubNav.forEach(function (el) {
                     el.classList.remove('active')
                 })
+                searchPopup.classList.remove('active')
+
             })
         }
 
