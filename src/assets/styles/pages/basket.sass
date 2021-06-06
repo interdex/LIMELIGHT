@@ -1,7 +1,7 @@
 @import '../mixin.scss'
 .basket
     padding-top: 125px
-    margin-bottom: 235px
+    margin-bottom: 60px
     &_wrap
         display: flex
         justify-content: space-between
@@ -25,9 +25,10 @@
             margin-bottom: 0            
         &-img
             width: 340px
+            flex-shrink: 0
             margin-right: 44px
         &-descr
-            width: calc(100% - 384px)
+            width: 100%
         &-name
             text-transform: uppercase
             font-size: 18px
@@ -169,7 +170,8 @@ body.isMac
 @media (max-width: 1440px)
     .basket
         &_left
-            width: 45.75%
+            // width: 45.75%
+            width: 100%
 @media (max-width: 1024px)
     .basket
         &_wrap
