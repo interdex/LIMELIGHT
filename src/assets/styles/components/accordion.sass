@@ -63,6 +63,7 @@ $sans: 'Titillium Web', sans-serif
                 position: absolute
                 top: 4px
                 right: 10px
+                transition: 0.3s
                 &:before , &:after
                     content: ""
                     transition: all 0.25s ease-in-out
@@ -92,11 +93,12 @@ $sans: 'Titillium Web', sans-serif
                         max-height: 0
                         opacity: 0
                     &~i
-                        &:before
-                            transform: translate( 3px , 0 ) rotate( 45deg )
+                        transform: rotateX(180deg)
+                        // &:before
+                        //     transform: translate( 3px , 0 ) rotate( 45deg )
 
-                        &:after
-                            transform: translate( -3px , 0 ) rotate( -45deg )
+                        // &:after
+                        //     transform: translate( -3px , 0 ) rotate( -45deg )
             .accordion-content
                 color: $black
                 font-size: 17px

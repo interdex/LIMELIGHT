@@ -10,3 +10,9 @@ import '../styles/components/header.sass'
 import '../styles/components/search.sass'
 import '../styles/components/subscribe.sass'
 import '../styles/components/btn.sass'
+
+var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+
+if (isMac) {
+    document.querySelector('body').classList.add('isMac')
+}

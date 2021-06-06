@@ -59,14 +59,20 @@
     &_nav
         &-mobile
             display: none
-            ul li .accordion-content
-                max-height: unset
-                .header_subnav
-                    &-items 
-                        margin-bottom: 20px
-                        a 
-                            &:nth-last-child(1)
-                                margin-bottom: 0
+            ul li 
+                .accordion-content
+                    max-height: unset
+                    .header_subnav
+                        &-items 
+                            margin-bottom: 20px
+                            a 
+                                &:nth-last-child(1)
+                                    margin-bottom: 0
+                i
+                    top: 5px
+                input:checked ~ i
+                    top: 11px
+
     &_mobile
         width: 30px
         height: 40px
@@ -285,8 +291,7 @@
                     width: 100%
                     position: relative
                     background: #FFFFFF
-                    border: 1px solid #00000060
-                    border-radius: 8px
+                    border: 1px solid #8a898a
                     margin-bottom: 20px
                     &-form
                         padding-top: 20px
@@ -303,6 +308,7 @@
                         height: 100%
                         padding: 6px 20px 6px 40px
                         background: transparent
+                        font-weight: 500    
                 &-lang
                     a
                         font-size: 12px
