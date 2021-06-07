@@ -11,8 +11,39 @@ import '../styles/components/search.sass'
 import '../styles/components/subscribe.sass'
 import '../styles/components/btn.sass'
 
-var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+var isMac = navigator.platform.toUpperCase().indexOf('WIN')>=0;
 
 if (isMac) {
     document.querySelector('body').classList.add('isMac')
+    let all = document.querySelectorAll("*")
+    all.forEach(function(el) {
+        switch (getComputedStyle(el).fontWeight) {
+            case '900':
+                el.style.fontWeight = '800'
+                break;
+
+            case '800':
+                el.style.fontWeight = '700'
+                break;
+
+            case '700':
+                el.style.fontWeight = '600'
+                break;
+
+            case '600':
+                el.style.fontWeight = '500'
+                break;
+
+            case '500':
+                el.style.fontWeight = '400'
+                break;
+
+            case '400':
+                el.style.fontWeight = '300'
+                break;
+
+                
+        }
+       
+    })
 }
