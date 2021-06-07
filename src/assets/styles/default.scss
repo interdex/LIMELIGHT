@@ -132,6 +132,11 @@ textarea {
   resize: none;
 }
 
+
+.slick-slide img{
+  w100p
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -146,4 +151,6 @@ textarea {
     padding: 0 15px
   }
 }
+
+
   
