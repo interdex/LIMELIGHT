@@ -124,13 +124,21 @@
         &-item
             display: flex
             align-items: flex-start
-            margin-bottom: 30px
+            margin-bottom: 17px
+            padding-bottom: 17px
+            border-bottom: 1px solid #909090
+            
+            &:last-child
+                border: none
             &-img
+                overflow: hidden
                 width: 454px
                 height: 460px
                 img
                     width: 100%
-                    height: auto
+                    height: 100%
+                    object-fit: cover
+                    // height: auto
                     display: block
             &-descr
                 width: calc(100% - 350px)
@@ -218,6 +226,7 @@ body.isMac
                 margin-bottom: 40px
                 &-img
                     width: 100%
+                    height: 294px
                 &-descr
                     width: 100%
                     padding-left: 0
