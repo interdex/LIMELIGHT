@@ -63,12 +63,15 @@ function getComputedStyleProperty(element, property) {
 var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
 
 if (isMac) {
-    console.log(getComputedStyleProperty(document.querySelector('html'), "font-weight"))
 
     document.querySelector('body').classList.add('isMac')
     let all = document.querySelectorAll("*")
     all.forEach(function(el, index) {
         switch (getComputedStyleProperty(el, "font-weight")) {
+            case 'bolder':
+                el.style.fontWeight = '800'
+                break;
+
             case '900':
                 el.style.fontWeight = '800'
                 break;
@@ -81,6 +84,10 @@ if (isMac) {
                 el.style.fontWeight = '600'
                 break;
 
+            case 'bold':
+                el.style.fontWeight = '600'
+                break;
+
             case '600':
                 el.style.fontWeight = '500'
                 break;
@@ -90,6 +97,10 @@ if (isMac) {
                 break;
 
             case '400':
+                el.style.fontWeight = '300'
+                break;
+                
+            case 'normal':
                 el.style.fontWeight = '300'
                 break;
         }
