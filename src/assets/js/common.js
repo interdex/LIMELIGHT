@@ -11,12 +11,14 @@ import '../styles/components/search.sass'
 import '../styles/components/subscribe.sass'
 import '../styles/components/btn.sass'
 
-var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+var isMac = navigator.platform.toUpperCase().indexOf('WIN')>=0;
 
 if (isMac) {
+    console.log(getComputedStyle(document.querySelector('html')).fontWeight)
+
     document.querySelector('body').classList.add('isMac')
     let all = document.querySelectorAll("*")
-    all.forEach(function(el) {
+    all.forEach(function(el, index) {
         switch (getComputedStyle(el).fontWeight) {
             case '900':
                 el.style.fontWeight = '800'
@@ -41,9 +43,6 @@ if (isMac) {
             case '400':
                 el.style.fontWeight = '300'
                 break;
-
-                
         }
-       
     })
 }
