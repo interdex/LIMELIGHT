@@ -11,15 +11,64 @@ import '../styles/components/search.sass'
 import '../styles/components/subscribe.sass'
 import '../styles/components/btn.sass'
 
+function walkTheDOM(node, func) {
+    func(node);
+    node = node.firstChild;
+    while (node) {
+        walkTheDOM(node, func);
+        node = node.nextSibling;
+    }
+}
+
+function textContent(node) {
+    if (typeof node.textContent !== "undefined" && node.textContent !== null) {
+        return node.textContent;
+    }
+
+    var text = ""
+
+    walkTheDOM(node, function (current) {
+        if (current.nodeType === 3) {
+            text += current.nodeValue;
+        }
+    });
+
+    return text;
+}
+
+function camelCase(string) {
+    return string.replace(/-([a-z])/g, function (matched) {
+        return matched[1].toUpperCase()
+    });
+}
+
+function getComputedStyleProperty(element, property) {
+    if (!window.getComputedStyle) {
+        if (document.defaultView && document.defaultView.getComputedStyle) {
+            return document.defaultView.getComputedStyle(element).getPropertyValue(property);
+        } else {
+            var camelCased = camelCase(property);
+
+            if (element.currentStyle) {
+                return element.currentStyle[camelCased];
+            } else {
+                return element.style[camelCased];
+            }
+        }
+    } else {
+        return window.getComputedStyle(element).getPropertyValue(property);
+    }
+}
+
 var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
 
 if (isMac) {
-    console.log(getComputedStyle(document.querySelector('html')).fontWeight)
+    console.log(getComputedStyleProperty(document.querySelector('html'), "font-weight"))
 
     document.querySelector('body').classList.add('isMac')
     let all = document.querySelectorAll("*")
     all.forEach(function(el, index) {
-        switch (getComputedStyle(el).fontWeight) {
+        switch (getComputedStyleProperty(el, "font-weight")) {
             case '900':
                 el.style.fontWeight = '800'
                 break;
@@ -46,3 +95,5 @@ if (isMac) {
         }
     })
 }
+
+
