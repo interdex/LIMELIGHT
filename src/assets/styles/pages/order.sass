@@ -280,7 +280,7 @@
         margin-bottom: 65px
     &_item
         display: flex
-        margin-bottom: 14px
+        margin-bottom: 20px
         &:nth-last-of-type(1)
             margin-bottom: 0            
         &-img
@@ -311,6 +311,8 @@
             display: flex
             align-items: center
             justify-content: space-between
+        &-row 
+            margin-right: 10px
         &-name
             font-weight: 600
             font-size: 12px
@@ -441,7 +443,7 @@
             padding-bottom: 22px
             border-bottom: 1px solid #DFDFDF
         &_right
-            margin-bottom: 30px
+            margin-bottom: 0px
             width: 100%
             padding: 0
             // margin-bottom: 22px
@@ -609,3 +611,11 @@
                 flex-direction: column
             &-wrap
                 width: 100% !important
+
+@media (max-width: 330px)
+    .order
+        &_item
+            &-price
+                font-size: 12px
+            &-name
+                font-size: 11px

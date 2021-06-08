@@ -74,13 +74,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       $slider.on('init', function (event, slick, currentSlide, nextSlide) {
         console.log('init')
-        var calc = ((1) / (slick.slideCount )) * 100;
-          $progressBar
+        var calc = ((1) / (slick.slideCount)) * 100;
+        $progressBar
           .css('background-size', calc + '% 100%')
           .attr('aria-valuenow', calc);
-        });
+      });
       $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        var calc = ((nextSlide+1) / (slick.slideCount )) * 100;
+        var calc = ((nextSlide + 1) / (slick.slideCount)) * 100;
 
         $progressBar
           .css('background-size', calc + '% 100%')
@@ -105,52 +105,61 @@ document.addEventListener("DOMContentLoaded", function (event) {
   initCardSlider()
 
   //ADD TO BASKET
+  function getElementIndex(elem) {
+    elem = elem.tagName ? elem : document.querySelector(elem) // можно добавить еще проверок
+    return [].indexOf.call(elem.parentNode.children, elem)
+  }
+
   function initAddToBasket() {
     let addtobasketForm = document.querySelector('.addtobasket')
     let addtobasketSelects = document.querySelectorAll('.card_select-current')
     let addtobasketDrops = document.querySelectorAll('.card_select-all')
-    let addtobasketOptions = document.querySelectorAll('.card_select-all span')
+    let temp = ""
+
+    Array.from(addtobasketDrops).forEach(function (elOption) {
+      elOption.addEventListener("click", (e) => {
+        e.target.parentNode.parentNode.querySelector('.card_select-value').innerHTML = e.target.textContent
+        e.target.parentNode.parentNode.querySelector('input').value = e.target.textContent
+        e.target.parentNode.parentNode.querySelector('.card_select-current').classList.remove('active')
+        e.target.parentNode.parentNode.querySelector('.card_select-all').classList.remove('active')
+        e.target.innerHTML = temp
+      });
+    });
 
     addtobasketSelects.forEach(function (el) {
       el.addEventListener('click', function () {
-        this.classList.toggle('active')
-        let temp = el.querySelector('.card_select-value').innerHTML.replace(/\s/g, '');
-
-     
-
-        this.parentNode.querySelector('.card_select-all').classList.toggle('active')
-        addtobasketOptions.forEach(function (el) {
-          el.addEventListener('click', function () {
-            temp = this.parentNode.parentNode.querySelector('.card_select-value').innerHTML.replace(/\s/g, '');
-            this.parentNode.parentNode.querySelector('input').value = this.innerHTML.replace(/\s/g, '');
-            this.parentNode.parentNode.querySelector('.card_select-value').innerHTML = this.innerHTML
-            this.innerHTML = temp
-            //innerHTML.replace(/\s/g, '');
-              el.parentNode.parentNode.querySelector('.card_select-current').click()
-              // addtobasketDrops.forEach( function(elem, index){
-              //   elem.classList.remove('active')
-              // })
-              // addtobasketSelects.forEach( function(elem, index){
-              //   elem.classList.remove('active')
-              // })
-          })
+        let cp = this.parentNode
+        addtobasketDrops.forEach(function (elem, index) {
+          if (getElementIndex(cp) != index) {
+            elem.classList.remove('active')
+          }
         })
-       
-        
+        addtobasketSelects.forEach(function (elem, index) {
+          if (getElementIndex(cp) != index) {
+            elem.classList.remove('active')
+          }
+        })
+
+        this.classList.toggle('active')
+        this.parentNode.querySelector('.card_select-all').classList.toggle('active')
+        temp = this.querySelector('.card_select-value').innerHTML.replace(/\s/g, '');
+
       })
     })
+
 
     let footerMobile = document.querySelector('.footer-mobile')
 
     window.addEventListener('scroll', () => {
-      if(window.screen.availWidth <= 768) {
+      sidebarScrollDown()
+      if (window.screen.availWidth <= 768) {
         if (elementInViewport2(footerMobile)) {
           addtobasketForm.style.display = 'none';
         } else {
           addtobasketForm.style.display = 'flex';
         }
       }
-      
+
     })
 
 
@@ -177,6 +186,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
       (top + height) > window.pageYOffset &&
       (left + width) > window.pageXOffset
     );
+  }
+
+
+  // SCROLL SIDEBAR TO DOWN
+
+  function sidebarScrollDown() {
+    let also = document.querySelector('.also')
+    let sidebar = document.querySelector('.card_right')
+    if (also && elementInViewport2(also)) {
+      sidebar.scrollTop = Math.ceil(sidebar.scrollHeight - sidebar.clientHeight)
+    }
   }
 
 
