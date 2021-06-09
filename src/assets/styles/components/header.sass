@@ -5,7 +5,7 @@
     justify-content: space-between
     align-items: center
     position: absolute
-    z-index: 5
+    z-index: 11
     top: 0
     left: 0px
     right: 0px
@@ -240,7 +240,6 @@
             &-items
                 margin-right: 60px
 
-
 @media (max-width: 768px)
     .header
         background: #fff
@@ -262,7 +261,7 @@
                 z-index: 40
                 position: absolute
                 top: 32px
-                left: -60px
+                left: -55px
                 right: 0
                 width: 100vw
                 background: #fff
@@ -310,6 +309,8 @@
                         text-transform: uppercase
                         &.current
                             font-weight: 600
+                ul li .accordion-content .header_subnav-items
+                   width: 100%
         &_lang, &_search, &_user
             display: none
         &_left
