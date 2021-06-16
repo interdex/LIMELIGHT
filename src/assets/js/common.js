@@ -67,6 +67,60 @@ if (isMac) {
     document.querySelector('body').classList.add('isMac')
     let all = document.querySelectorAll("*")
     all.forEach(function(el, index) {
+        switch (getComputedStyleProperty(el, "font-size")) {
+            case '30px':
+                el.style.fontSize = '28px'
+                break;
+            case '28px':
+                el.style.fontSize = '26px'
+                break;
+            case '26px':
+                el.style.fontSize = '24px'
+                break;
+            case '25px':
+                el.style.fontSize = '23px'
+                break;
+            case '24px':
+                el.style.fontSize = '22px'
+                break;
+            case '22px':
+                el.style.fontSize = '20px'
+                break;
+            case '20px':
+                el.style.fontSize = '18px'
+                break;
+            case '18px':
+                el.style.fontSize = '16px'
+                break;
+            case '17px':
+                el.style.fontSize = '15px'
+                break;
+            case '16px':
+                el.style.fontSize = '14px'
+                break;
+            case '15px':
+                el.style.fontSize = '13px'
+                break;
+            case '14px':
+                el.style.fontSize = '12px'
+                break;
+            case '13px':
+                el.style.fontSize = '11px'
+                break;
+            case '12px':
+                el.style.fontSize = '10px'
+                break;
+            case '11px':
+                el.style.fontSize = '9px'
+                break;
+            case '10px':
+                el.style.fontSize = '9px'
+                break;
+            case '9px':
+                el.style.fontSize = '8px'
+                break;
+            }
+
         switch (getComputedStyleProperty(el, "font-weight")) {
             case 'bolder':
                 el.style.fontWeight = '800'
