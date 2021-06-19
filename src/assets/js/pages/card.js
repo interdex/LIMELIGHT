@@ -152,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     window.addEventListener('scroll', () => {
       sidebarScrollDown()
+      sidebarScrollTop()
       if (window.screen.availWidth <= 768) {
         if (elementInViewport2(footerMobile)) {
           addtobasketForm.style.display = 'none';
@@ -196,6 +197,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let sidebar = document.querySelector('.card_right')
     if (also && elementInViewport2(also)) {
       sidebar.scrollTop = Math.ceil(sidebar.scrollHeight - sidebar.clientHeight)
+    }
+  }
+  function sidebarScrollTop() {
+    let header = document.querySelector('.header')
+    let sidebar = document.querySelector('.card_right')
+    if (header && elementInViewport2(header)) {
+      sidebar.scrollTop = 0
     }
   }
 
