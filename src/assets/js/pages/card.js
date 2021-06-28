@@ -199,6 +199,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       sidebar.scrollTop = Math.ceil(sidebar.scrollHeight - sidebar.clientHeight)
     }
   }
+
   function sidebarScrollTop() {
     let header = document.querySelector('.header')
     let sidebar = document.querySelector('.card_right')
